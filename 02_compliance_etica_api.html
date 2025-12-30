@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPA-20 | Bloco 2 — Compliance, Ética, Controles, PLD/FT, Suitability e Ilícitos</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <a href="./index.html" style="text-decoration:none;">CPA-20</a>
+        <span class="badge">Resumo Visual</span>
+      </div>
+
+      <div class="links">
+        <a class="pill" href="./01_sfn.html">SFN</a>
+        <a class="pill" href="./02_compliance_etica_api.html" aria-current="page">Compliance </a>
+        <a class="pill" href="./03_economia_financas.html">Economia</a>
+        <a class="pill" href="./04_produtos_rv_rf_deriv_coe_cripto.html">Produtos</a>
+        <a class="pill" href="./05_fundos.html">Fundos</a>
+        <a class="pill" href="./06_previdencia.html">Previdência</a>
+        <a class="pill" href="./07_risco_performance.html">Risco</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ✅ TOC retrátil padrão (igual Produtos/Fundos) -->
+<nav id="toc" data-toc-scope="main.wrap" data-toc-levels="2,3">
+  <div class="toc__header">
+    <div class="toc__title">Sumário</div>
+    <button id="toc-pin" class="toc__pin" type="button" title="Fixar sumário">📌</button>
+  </div>
+  <ul class="toc__list"></ul>
+</nav>
+
+<main class="wrap">
+
+  <h1>Compliance, Ética e Controles (Bloco 2)</h1>
+
+  <div class="layout">
+    <!-- TOC -->
+    <aside class="toc">
+      <h3>Sumário</h3>
+      <a href="#visao">Visão geral (por que cai tanto)</a>
+      <a href="#siglas">Glossário de siglas (todas)</a>
+      <a href="#compliance">Compliance + Controles + 3 linhas</a>
+      <a href="#segregacao">Segregação de funções + conflito</a>
+      <a href="#pldft">PLD/FT + KYC + COAF (fluxo completo)</a>
+      <a href="#suitability">Suitability (adequação)</a>
+      <a href="#etica">Ética e conduta</a>
+      <a href="#ilicitos">Ilícitos: insider, manipulação, front running...</a>
+      <a href="#informacao">Informação: fato relevante e “tipping-off”</a>
+      <a href="#pegadinhas">Pegadinhas de prova</a>
+      <a href="#quiz">Mini-quiz (gabarito automático)</a>
+    </aside>
+
+    <div>
+
+      <section class="card anchor" id="visao">
+        <h2>1) Visão geral (o que a prova quer de ti)</h2>
+        <div class="callout">
+          <b>Regra de ouro CPA-20:</b> aqui não é teoria — é <b>procedimento</b>.
+          O enunciado descreve um caso e tu precisa saber:
+          <ul>
+            <li>qual é o risco (lavagem, conflito, inadequação)</li>
+            <li>qual é o dever do profissional (registrar, recusar, comunicar, escalar)</li>
+            <li>quem é o órgão/instância (COAF/CVM/BACEN/Compliance)</li>
+          </ul>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="kpi">
+          <div class="box"><b>Objetivo</b><span>Proteger cliente, mercado e instituição (integridade).</span></div>
+          <div class="box"><b>Como cai</b><span>Casos: suspeita, pressão do cliente, informação privilegiada, oferta inadequada.</span></div>
+          <div class="box"><b>Palavras assassinas</b><span>“sempre”, “nunca”, “pode avisar o cliente”, “basta assinar termo”.</span></div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="siglas">
+        <h2>2) Glossário de siglas (todas explicadas)</h2>
+
+        <table class="table">
+          <thead><tr><th>Sigla</th><th>Significado</th><th>O que faz / onde aparece</th></tr></thead>
+          <tbody>
+            <tr><td><span class="gloss">PLD/FT</span></td><td>Prevenção à Lavagem de Dinheiro / Financiamento do Terrorismo</td><td>Conjunto de políticas e procedimentos para prevenir e detectar operações suspeitas.</td></tr>
+            <tr><td><span class="gloss">KYC</span></td><td>Know Your Customer (Conheça Seu Cliente)</td><td>Coleta/validação de dados + perfil + origem de recursos + monitoramento.</td></tr>
+            <tr><td><span class="gloss">COAF</span></td><td>Conselho de Controle de Atividades Financeiras</td><td>Unidade de inteligência financeira: recebe comunicações de operações suspeitas/atípicas.</td></tr>
+            <tr><td><span class="gloss">PEP</span></td><td>Pessoa Exposta Politicamente</td><td>Cliente com maior risco: exige diligência reforçada e monitoramento.</td></tr>
+            <tr><td><span class="gloss">CDD</span></td><td>Customer Due Diligence (Diligência do Cliente)</td><td>Nível “normal” de diligência: identificação, avaliação de risco e monitoramento.</td></tr>
+            <tr><td><span class="gloss">EDD</span></td><td>Enhanced Due Diligence (Diligência Reforçada)</td><td>Exigida em maior risco (ex.: PEP, operações complexas, países de risco).</td></tr>
+            <tr><td><span class="gloss">AML</span></td><td>Anti-Money Laundering</td><td>Termo internacional equivalente a PLD.</td></tr>
+            <tr><td><span class="gloss">CVM</span></td><td>Comissão de Valores Mobiliários</td><td>Fiscaliza mercado de capitais: ilícitos como insider trading e manipulação.</td></tr>
+            <tr><td><span class="gloss">BACEN</span></td><td>Banco Central do Brasil</td><td>Supervisiona instituições financeiras e regula aspectos do sistema financeiro.</td></tr>
+            <tr><td><span class="gloss">OPA</span></td><td>Oferta Pública de Aquisição</td><td>Não é deste bloco, mas aparece em casos de mercado (proteção do minoritário).</td></tr>
+            <tr><td><span class="gloss">Suitability</span></td><td>Adequação do produto ao perfil do cliente</td><td>Evita oferta inadequada. Não é “opcional” nem “renunciável”.</td></tr>
+            <tr><td><span class="gloss">Chinese Wall</span></td><td>Barreira de informação (muralha chinesa)</td><td>Separa áreas para evitar conflito e vazamento de informação (ex.: research x sales).</td></tr>
+            <tr><td><span class="gloss">Tipping-off</span></td><td>Avisar o cliente sobre comunicação ao órgão</td><td>É proibido: não pode avisar o cliente que foi reportado ao COAF.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card anchor" id="compliance">
+        <h2>3) Compliance + Controles Internos (com estrutura)</h2>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>O que é Compliance</h3>
+            <ul>
+              <li>Função de garantir aderência a <b>leis</b>, <b>normas</b>, <b>regulação</b> e <b>políticas internas</b>.</li>
+              <li>É prevenção: reduz risco legal, reputacional e operacional.</li>
+              <li>Em prova, “compliance” = <b>procedimento + registro + evidência</b>.</li>
+            </ul>
+          </div>
+
+          <div class="card compact cols-6">
+            <h3>Três linhas de defesa (modelo clássico)</h3>
+            <ul>
+              <li><b>1ª linha</b>: áreas de negócio (executam e controlam no dia a dia).</li>
+              <li><b>2ª linha</b>: compliance/riscos/controles (normatizam, monitoram, orientam).</li>
+              <li><b>3ª linha</b>: auditoria interna (avalia de forma independente).</li>
+            </ul>
+            <div class="tag warn">Pegadinha: auditoria não é 2ª linha.</div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="riskbox">
+          <h3>Principais riscos (como aparecem no enunciado)</h3>
+          <div class="risk">
+            <div class="pillr"><b>Risco Legal</b><span>multas, sanções, processos.</span></div>
+            <div class="pillr"><b>Risco Reputacional</b><span>perda de confiança, mídia, saída de clientes.</span></div>
+            <div class="pillr"><b>Risco Operacional</b><span>falha de processo, fraude, controles fracos.</span></div>
+            <div class="pillr"><b>Risco de Conformidade</b><span>descumprir regras e normas.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="segregacao">
+        <h2>4) Segregação de funções + Conflito de Interesses</h2>
+
+        <div class="grid">
+          <div class="card compact cols-7">
+            <h3>Segregação (por quê existe)</h3>
+            <ul>
+              <li>Evita que a mesma pessoa: <b>opere</b> + <b>aprove</b> + <b>controle</b> a mesma transação.</li>
+              <li>Objetivo primário: <b>reduzir conflito de interesses e fraude</b>.</li>
+              <li>Em prova: é “controle preventivo” (antes do problema ocorrer).</li>
+            </ul>
+          </div>
+          <div class="card compact cols-5">
+            <h3>Conflito de interesses</h3>
+            <ul>
+              <li>Quando o interesse do profissional/instituição pode <b>prejudicar</b> o cliente.</li>
+              <li>Ex.: empurrar produto com maior comissão e pior adequação.</li>
+              <li>Tratamento: <b>identificar</b>, <b>mitigar</b>, <b>divulgar</b> quando aplicável.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Pegadinha:</b> “Assinar termo” não elimina conflito nem transfere responsabilidade.
+        </div>
+      </section>
+
+      <section class="card anchor" id="pldft">
+        <h2>5) PLD/FT + KYC + COAF (fluxo completo de prova)</h2>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>PLD/FT (definição)</h3>
+            <ul>
+              <li><b>Lavagem de dinheiro</b>: tentar dar aparência lícita a recursos de origem ilícita.</li>
+              <li><b>FT</b>: canalizar recursos para atividades terroristas (origem pode ser lícita ou ilícita).</li>
+              <li>Instituições têm dever de <b>prevenir</b>, <b>detectar</b>, <b>registrar</b> e <b>comunicar</b>.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-6">
+            <h3>KYC + Due Diligence (CDD/EDD)</h3>
+            <ul>
+              <li><span class="gloss">KYC</span> = conhecer cliente: dados, perfil, beneficiário final, origem de recursos.</li>
+              <li><span class="gloss">CDD</span> = diligência normal (padrão).</li>
+              <li><span class="gloss">EDD</span> = diligência reforçada (alto risco).</li>
+              <li><span class="gloss">PEP</span> costuma exigir EDD.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Fluxo de PLD/FT (do atendimento ao COAF)</h3>
+        <div class="timeline">
+          <div class="step">
+            <b>1) Identificação e cadastro (KYC)</b>
+            <div class="small">Coleta valida dados e entende objetivo/atividade/origem de recursos.</div>
+          </div>
+          <div class="step">
+            <b>2) Classificação de risco do cliente</b>
+            <div class="small">Baixo / médio / alto (ex.: PEP, país de risco, complexidade).</div>
+          </div>
+          <div class="step">
+            <b>3) Monitoramento de operações</b>
+            <div class="small">Busca padrões: valor incompatível, fracionamento, operações sem sentido econômico.</div>
+          </div>
+          <div class="step">
+            <b>4) Detecção de operação suspeita ou atípica</b>
+            <div class="small">Atípica ≠ crime confirmado; basta indício/alerta para análise.</div>
+          </div>
+          <div class="step">
+            <b>5) Escalonamento interno (Compliance/PLD)</b>
+            <div class="small">Análise e decisão: comunicar ou arquivar com justificativa (conforme política).</div>
+          </div>
+          <div class="step">
+            <b>6) Comunicação ao COAF</b>
+            <div class="small"><b>Sigilosa</b>. Proibido “tipping-off” (avisar o cliente).</div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="callout">
+          <b>Ponto de prova:</b> Comunicação ao <span class="gloss">COAF</span> é <b>sigilosa</b> e <b>não depende</b> de o crime estar “provado”.
+          E tu <b>não pode</b> avisar o cliente (tipping-off).
+        </div>
+      </section>
+
+      <section class="card anchor" id="suitability">
+        <h2>6) Suitability (Adequação) — onde a banca mais te provoca</h2>
+
+        <div class="grid">
+          <div class="card compact cols-7">
+            <h3>O que é</h3>
+            <ul>
+              <li>Processo para garantir que produto/serviço é <b>adequado</b> ao cliente.</li>
+              <li>Adequação considera: <b>objetivo</b>, <b>horizonte</b>, <b>tolerância a risco</b>, <b>conhecimento</b>, <b>situação financeira</b>.</li>
+              <li>Resultado prático: recomendação coerente + registro de evidências.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-5">
+            <h3>O que NÃO é</h3>
+            <ul>
+              <li>Não é “cliente assinou e pronto”.</li>
+              <li>Não é “cliente insistiu, então pode”.</li>
+              <li>Não é só preencher questionário: envolve <b>conduta</b> e <b>recomendação</b>.</li>
+            </ul>
+            <div class="tag bad">Suitability não é renunciável.</div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Procedimento típico em caso de inadequação</h3>
+        <div class="flow">
+          <div class="node"><strong>Identificar</strong><span>Produto não bate com perfil</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Alertar</strong><span>Informar riscos e inadequação</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Recomendar alternativa</strong><span>Adequada ao perfil</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Registrar evidências</strong><span>Documentação interna</span></div>
+        </div>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Pegadinha:</b> “Registrar que o cliente insistiu” não torna adequado. O profissional deve <b>recusar</b> ou <b>reavaliar</b> conforme regra interna/regulatória aplicável.
+        </div>
+      </section>
+
+      <section class="card anchor" id="etica">
+        <h2>7) Ética e conduta profissional</h2>
+        <ul>
+          <li>Princípios: <b>integridade</b>, <b>boa-fé</b>, <b>transparência</b>, <b>diligência</b>, <b>equidade</b>.</li>
+          <li>Deveres: informação clara, evitar promessas, evitar conflito, respeitar perfil do cliente.</li>
+          <li>Em dúvida: escalar para compliance e documentar.</li>
+        </ul>
+        <div class="callout">
+          <b>Prova:</b> Ética é “o que eu devo fazer mesmo quando ninguém está olhando” — traduzido em procedimento.
+        </div>
+      </section>
+
+      <section class="card anchor" id="ilicitos">
+        <h2>8) Ilícitos no mercado (definição + como reconhecer)</h2>
+
+        <table class="table">
+          <thead>
+            <tr><th>Ilícito</th><th>O que é</th><th>Exemplo</th><th>Pegadinha</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Insider Trading</b></td>
+              <td>Negociar usando <b>informação relevante ainda não pública</b></td>
+              <td>Comprar ação antes de anúncio de aquisição</td>
+              <td>“Ouvi de amigo” não livra: ainda é info privilegiada</td>
+            </tr>
+            <tr>
+              <td><b>Manipulação de mercado</b></td>
+              <td>Criar falsa aparência de oferta/demanda/preço</td>
+              <td>Operações para inflar preço artificialmente</td>
+              <td>Volume anormal + intenção de induzir</td>
+            </tr>
+            <tr>
+              <td><b>Front Running</b></td>
+              <td>Operar antes do cliente usando informação da ordem</td>
+              <td>Ver ordem grande de compra e comprar antes</td>
+              <td>“Só foi coincidência” — prova trata como ilícito</td>
+            </tr>
+            <tr>
+              <td><b>Churning</b></td>
+              <td>Girar carteira para gerar comissão</td>
+              <td>Muitas operações sem benefício ao cliente</td>
+              <td>Confundir com rebalanceamento legítimo</td>
+            </tr>
+            <tr>
+              <td><b>Boato / rumor</b></td>
+              <td>Disseminar informação falsa para influenciar preço</td>
+              <td>“Dizem que vai subir” para puxar compra</td>
+              <td>Prova cobra responsabilidade e cautela</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card anchor" id="informacao">
+        <h2>9) Informação, sigilo e “tipping-off”</h2>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>Sigilo (PLD/FT)</h3>
+            <ul>
+              <li>Comunicação ao <span class="gloss">COAF</span> é <b>sigilosa</b>.</li>
+              <li><span class="gloss">Tipping-off</span> = avisar o cliente de que foi comunicado → <b>proibido</b>.</li>
+              <li>Conduta correta: escalar internamente e seguir política.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-6">
+            <h3>Informação relevante (mercado)</h3>
+            <ul>
+              <li>Informação relevante não pública pode gerar <b>insider trading</b> se usada para negociar.</li>
+              <li>“Chinese Wall” (barreira de informação) separa áreas para evitar vazamentos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="pegadinhas">
+        <h2>10) Pegadinhas de prova (as mais frequentes)</h2>
+        <ul>
+          <li>PLD/FT: <b>não precisa</b> prova de crime para comunicar; basta <b>indício</b>.</li>
+          <li>COAF: comunicação é <b>sigilosa</b> → nunca avisar o cliente (tipping-off).</li>
+          <li>Suitability: “cliente assinou termo” <b>não transfere responsabilidade</b>.</li>
+          <li>Segregação: objetivo é <b>evitar conflito/fraude</b>, não “eficiência”.</li>
+          <li>Front running: operar antes do cliente usando ordem do cliente é ilícito.</li>
+          <li>Insider: info relevante não pública + operação = problema (mesmo repassada).</li>
+        </ul>
+      </section>
+
+      <section class="card anchor" id="quiz">
+        <h2>11) Mini-quiz (corrige sozinho)</h2>
+
+        <div class="quiz" data-quiz="comp1">
+          <button class="btn" onclick="gradeQuiz('comp1')">CORRIGIR QUIZ</button>
+          <button class="btn" onclick="resetQuiz('comp1')">LIMPAR</button>
+          <div class="result" id="res_comp1">Escolhe as alternativas e clica em CORRIGIR.</div>
+
+          <div class="q" data-answer="c">
+            <div class="stem">Q1) Comunicação ao COAF deve ser:</div>
+            <label><input type="radio" name="q1" value="a"> a) Informada ao cliente</label>
+            <label><input type="radio" name="q1" value="b"> b) Feita só com crime comprovado</label>
+            <label><input type="radio" name="q1" value="c"> c) Sigilosa</label>
+            <label><input type="radio" name="q1" value="d"> d) Facultativa</label>
+          </div>
+
+          <div class="q" data-answer="b">
+            <div class="stem">Q2) Segregação de funções tem como objetivo principal:</div>
+            <label><input type="radio" name="q2" value="a"> a) Aumentar velocidade do atendimento</label>
+            <label><input type="radio" name="q2" value="b"> b) Evitar conflito de interesse e fraude</label>
+            <label><input type="radio" name="q2" value="c"> c) Diminuir custos fixos</label>
+            <label><input type="radio" name="q2" value="d"> d) Eliminar a necessidade de auditoria</label>
+          </div>
+
+          <div class="q" data-answer="c">
+            <div class="stem">Q3) Suitability pode ser “renunciada” pelo cliente com um termo?</div>
+            <label><input type="radio" name="q3" value="a"> a) Sim, se o cliente insistir</label>
+            <label><input type="radio" name="q3" value="b"> b) Sim, se o cliente assinar</label>
+            <label><input type="radio" name="q3" value="c"> c) Não</label>
+            <label><input type="radio" name="q3" value="d"> d) Depende do produto</label>
+          </div>
+
+          <div class="q" data-answer="a">
+            <div class="stem">Q4) Operar antes do cliente usando informação de uma ordem grande caracteriza:</div>
+            <label><input type="radio" name="q4" value="a"> a) Front running</label>
+            <label><input type="radio" name="q4" value="b"> b) Churning</label>
+            <label><input type="radio" name="q4" value="c"> c) Arbitragem</label>
+            <label><input type="radio" name="q4" value="d"> d) Hedge</label>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Pronto. Próximo passo</h2>
+        <div class="kv">
+          <div class="item"><div class="label">Agora</div><div class="value">Lê essa página 1x e faz o mini-quiz.</div></div>
+          <div class="item"><div class="label">Depois</div><div class="value">Pede “simulado hard Bloco 2” e eu te mando 20 questões no nível prova.</div></div>
+          <div class="item"><div class="label">Onde mais cai</div><div class="value">PLD/FT + COAF + suitability + ilícitos (front/insider/manipulação)</div></div>
+          <div class="item"><div class="label">Erro comum</div><div class="value">Achar que “assinatura” transfere responsabilidade (não transfere).</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<script src="./js/cpa20-ui.js" defer></script>
+
+<script>
+function gradeQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  const qs = quiz.querySelectorAll(".q");
+  let correct = 0;
+  let total = qs.length;
+
+  qs.forEach((q) => {
+    const ans = q.getAttribute("data-answer");
+    const chosen = q.querySelector('input[type="radio"]:checked');
+    const chosenVal = chosen ? chosen.value : null;
+    q.style.borderColor = "rgba(255,255,255,.10)";
+
+    if(chosenVal === ans){
+      correct++;
+      q.style.borderColor = "rgba(66,211,146,.45)";
+    }else{
+      q.style.borderColor = "rgba(251,113,133,.45)";
+    }
+  });
+
+  const res = document.getElementById(`res_${id}`);
+  const pct = Math.round((correct/total)*100);
+  res.innerHTML = `Resultado: <span class="${pct>=75?'good':'badx'}">${correct}/${total} (${pct}%)</span>`;
+}
+
+function resetQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  quiz.querySelectorAll('input[type="radio"]').forEach(i => i.checked=false);
+  quiz.querySelectorAll(".q").forEach(q => q.style.borderColor = "rgba(255,255,255,.10)");
+  document.getElementById(`res_${id}`).textContent = "Escolhe as alternativas e clica em CORRIGIR.";
+}
+</script>
+
+</main>
+</body>
+</html>

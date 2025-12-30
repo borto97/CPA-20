@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPA-20 | Bloco 1 — Sistema Financeiro Nacional</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <a href="./index.html" style="text-decoration:none;">CPA-20</a>
+        <span class="badge">Resumo Visual</span>
+      </div>
+
+      <div class="links">
+        <a class="pill" href="./01_sfn.html" aria-current="page">SFN</a> 
+        <a class="pill" href="./02_compliance_etica_api.html">Compliance</a>
+        <a class="pill" href="./03_economia_financas.html">Economia</a>
+        <a class="pill" href="./04_produtos_rv_rf_deriv_coe_cripto.html">Produtos</a>
+        <a class="pill" href="./05_fundos.html">Fundos</a>
+        <a class="pill" href="./06_previdencia.html">Previdência</a>
+        <a class="pill" href="./07_risco_performance.html">Risco</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TOC retrátil padrão (modelo Produtos/Fundos) -->
+<nav id="toc" data-toc-scope="main.wrap" data-toc-levels="2,3">
+  <div class="toc__header">
+    <div class="toc__title">Sumário</div>
+    <button id="toc-pin" class="toc__pin" type="button" title="Fixar sumário" aria-label="Fixar sumário">📌</button>
+  </div>
+  <ul class="toc__list"></ul>
+</nav>
+
+<main class="wrap">
+  <h1>Sistema Financeiro Nacional (SFN) — revisão visual completa</h1>
+
+  <section class="card anchor" id="visao">
+    <h2>1) Visão geral do SFN (entende isso e tu não erra SFN)</h2>
+
+    <div class="callout">
+      <b>Mapa mental:</b> SFN é uma cadeia:
+      <div class="flow" style="margin-top:10px;">
+        <div class="node"><strong>Normatiza</strong><span>Define diretrizes (regras)</span></div>
+        <div class="arrow">→</div>
+        <div class="node"><strong>Executa</strong><span>Implementa política monetária/cambial</span></div>
+        <div class="arrow">→</div>
+        <div class="node"><strong>Fiscaliza</strong><span>Supervisiona mercados e participantes</span></div>
+        <div class="arrow">→</div>
+        <div class="node"><strong>Opera</strong><span>Instituições e mercado</span></div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="kpi">
+      <div class="box">
+        <b>Quem manda (diretrizes)</b>
+        <span><b>CMN</b> — define diretrizes de política monetária, creditícia e cambial.</span>
+      </div>
+      <div class="box">
+        <b>Quem executa + supervisiona bancos</b>
+        <span><b>BACEN</b> — executa política monetária/cambial e supervisiona instituições financeiras.</span>
+      </div>
+      <div class="box">
+        <b>Quem regula mercado de capitais</b>
+        <span><b>CVM</b> — valores mobiliários, fundos, companhias abertas, ofertas públicas.</span>
+      </div>
+      <div class="box">
+        <b>Quem regula seguros e previdência aberta</b>
+        <span><b>SUSEP</b> — seguros, capitalização e previdência aberta (PGBL/VGBL).</span>
+      </div>
+      <div class="box">
+        <b>Quem regula previdência fechada</b>
+        <span><b>PREVIC</b> — fundos de pensão (EFPC).</span>
+      </div>
+      <div class="box">
+        <b>Quem autorregula mercado</b>
+        <span><b>ANBIMA</b> — códigos, regras de conduta e certificações (CPA-20 etc.).</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card anchor" id="cmn">
+    <h2>2) CMN — Conselho Monetário Nacional (topo normativo)</h2>
+    <div class="tag warn">Cai como “quem define diretrizes”</div>
+
+    <div class="grid">
+      <div class="card compact cols-7">
+        <h3>O que faz</h3>
+        <ul>
+          <li>Define as <b>diretrizes</b> da política <b>monetária</b>, <b>creditícia</b> e <b>cambial</b>.</li>
+          <li>Orienta a atuação do BACEN (o BACEN executa).</li>
+          <li>Atua como órgão máximo do SFN em termos de <b>normas</b>.</li>
+        </ul>
+        <div class="callout" style="margin-top:12px;">
+          <b>Frase de prova:</b> “O CMN é o órgão responsável por estabelecer diretrizes gerais…” → ✅
+        </div>
+      </div>
+
+      <div class="card compact cols-5">
+        <h3>O que NÃO faz (pegadinha)</h3>
+        <ul>
+          <li>Não executa open market / compulsório / redesconto.</li>
+          <li>Não fiscaliza instituições diretamente.</li>
+          <li>Não atua como regulador de mercado de capitais (isso é CVM).</li>
+        </ul>
+        <div class="tag bad">Se a questão fala em “executar política”, não é CMN.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card anchor" id="bacen">
+    <h2>3) BACEN — Banco Central do Brasil (executor + supervisor)</h2>
+    <div class="tag warn">Cai MUITO: instrumentos + supervisão</div>
+
+    <div class="grid">
+      <div class="card compact cols-6">
+        <h3>Funções (o que a prova cobra)</h3>
+        <ul>
+          <li><b>Executar</b> política monetária e cambial (diretriz do CMN).</li>
+          <li><b>Controlar liquidez</b> e estabilidade do sistema financeiro.</li>
+          <li><b>Supervisionar</b> instituições financeiras (bancos etc.).</li>
+          <li><b>Autorizar</b> funcionamento de instituições financeiras (nos termos aplicáveis).</li>
+        </ul>
+      </div>
+
+      <div class="card compact cols-6">
+        <h3>Instrumentos clássicos</h3>
+        <table class="table">
+          <thead><tr><th>Instrumento</th><th>O que é</th><th>Efeito típico</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Open Market</b></td>
+              <td>Compra/venda de títulos para ajustar liquidez</td>
+              <td>Liquidez ↑ ou ↓</td>
+            </tr>
+            <tr>
+              <td><b>Compulsório</b></td>
+              <td>Parcela dos depósitos que bancos recolhem</td>
+              <td>Crédito ↓ quando compulsório ↑</td>
+            </tr>
+            <tr>
+              <td><b>Redesconto</b></td>
+              <td>Empréstimo do Bacen a bancos (liquidez)</td>
+              <td>Socorro de curto prazo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>Autonomia do BACEN (pegadinha)</h3>
+    <div class="callout">
+      <b>Prova:</b> BACEN é <b>autônomo</b> (autonomia operacional/administrativa), mas <b>não é “independente do Estado”</b>.
+      Ele executa diretrizes do <b>CMN</b>.
+    </div>
+  </section>
+
+  <section class="card anchor" id="cvm">
+    <h2>4) CVM — Comissão de Valores Mobiliários (mercado de capitais)</h2>
+    <div class="tag warn">Cai muito: “valores mobiliários” + fundos + ofertas</div>
+
+    <div class="grid">
+      <div class="card compact cols-7">
+        <h3>O que a CVM fiscaliza/regula</h3>
+        <ul>
+          <li><b>Companhias abertas</b> (disclosure, governança, fatos relevantes).</li>
+          <li><b>Fundos de investimento</b> e prestadores (regras e fiscalização).</li>
+          <li><b>Ofertas públicas</b> de valores mobiliários.</li>
+          <li><b>Intermediários</b> (corretoras/distribuidoras) no âmbito do mercado de capitais.</li>
+          <li><b>Ilícitos</b>: insider trading, manipulação, condutas abusivas.</li>
+        </ul>
+        <div class="tag ok">Mantra: Fundo e ação → CVM</div>
+      </div>
+
+      <div class="card compact cols-5">
+        <h3>O que a CVM NÃO faz</h3>
+        <ul>
+          <li>Não conduz política monetária.</li>
+          <li>Não fiscaliza “seguro” (SUSEP) nem “previdência fechada” (PREVIC).</li>
+        </ul>
+        <div class="tag bad">Se fala em “títulos públicos/monetária”, pensa BACEN/CMN, não CVM.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card anchor" id="susep">
+    <h2>5) SUSEP (Superintendência de Seguros Privados) — Seguros, Capitalização e Previdência Aberta</h2>
+    <div class="tag warn">Pegadinha: SUSEP = aberta; PREVIC = fechada</div>
+
+    <table class="table">
+      <thead><tr><th>Mercado</th><th>O que abrange</th><th>Exemplo</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Seguros</b></td>
+          <td>Produtos de proteção/indenização</td>
+          <td>Seguro auto, vida, residencial</td>
+        </tr>
+        <tr>
+          <td><b>Capitalização</b></td>
+          <td>Produto de acumulação + sorteios (não é investimento)</td>
+          <td>Título de capitalização</td>
+        </tr>
+        <tr>
+          <td><b>Previdência aberta</b></td>
+          <td>Planos comercializados por seguradoras</td>
+          <td>PGBL/VGBL</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:12px;">
+      <b>Lembrete:</b> Título de capitalização existe por “poupança forçada” + sorteio + uso comercial (garantias/promoções).
+    </div>
+  </section>
+
+  <section class="card anchor" id="previc">
+    <h2>6) PREVIC (Superintendência Nacional de Previdência Complementar) — Previdência Complementar Fechada</h2>
+    <div class="tag warn">Cai como: PREVIC = fundos de pensão</div>
+
+    <div class="grid">
+      <div class="card compact cols-7">
+        <h3>O que é “fechada”?</h3>
+        <ul>
+          <li>EFPC = Entidade Fechada de Previdência Complementar (fundos de pensão).</li>
+          <li>“Fechada” porque é restrita a grupos (empregados de empresas, servidores de determinada entidade, etc.).</li>
+          <li>Objetivo: previdência de longo prazo, com regras de contribuição e benefício.</li>
+        </ul>
+      </div>
+      <div class="card compact cols-5">
+        <h3>O que a PREVIC faz</h3>
+        <ul>
+          <li><b>Fiscaliza e supervisiona</b> EFPC (governança, solvência, regras).</li>
+          <li>Não “capitaliza dinheiro” — quem investe é a entidade; a PREVIC regula e fiscaliza.</li>
+        </ul>
+        <div class="tag ok">Pergunta “quem fiscaliza fundos de pensão?” → PREVIC</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card anchor" id="anbima">
+    <h2>7) ANBIMA — Autorregulação (mercado privado)</h2>
+    <div class="tag warn">Cai muito: autorregulação ≠ órgão estatal</div>
+
+    <div class="grid">
+      <div class="card compact cols-6">
+        <h3>O que é autorregulação</h3>
+        <ul>
+          <li>Conjunto de regras e códigos <b>voluntariamente aderidos</b> por instituições.</li>
+          <li>Uma vez aderido, vira <b>obrigatório</b> cumprir (sanções internas do sistema).</li>
+          <li>Complementa a regulação estatal (CVM/BACEN etc.).</li>
+        </ul>
+      </div>
+
+      <div class="card compact cols-6">
+        <h3>O que a ANBIMA faz na prática</h3>
+        <ul>
+          <li>Códigos (conduta, distribuição, fundos etc.).</li>
+          <li>Certificações: CPA-10, <b>CPA-20</b>, CEA, CGA.</li>
+          <li>Regras de melhores práticas e supervisão autorregulatória.</li>
+        </ul>
+        <div class="tag bad">Pegadinha: ANBIMA não é CVM, não é Bacen.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card anchor" id="instituicoes">
+    <h2>8) Instituições do SFN (quem opera)</h2>
+
+    <h3>Bancos, corretoras e distribuidoras (diferença que cai)</h3>
+    <table class="table">
+      <thead><tr><th>Instituição</th><th>Função</th><th>O que a prova tenta confundir</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Banco múltiplo</b></td>
+          <td>Várias carteiras (comercial, investimento etc.); intermediação financeira ampla</td>
+          <td>“Banco faz tudo” → não; há regras e autorizações</td>
+        </tr>
+        <tr>
+          <td><b>Corretora (CTVM)</b></td>
+          <td>Intermediação de valores mobiliários; acesso a bolsa; execução de ordens</td>
+          <td>Confundir com banco captador de depósito</td>
+        </tr>
+        <tr>
+          <td><b>Distribuidora (DTVM)</b></td>
+          <td>Distribuição de produtos e intermediação (muito focada em distribuição)</td>
+          <td>Confundir corretora x distribuidora (na prática, ambas distribuem)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card anchor" id="investidores">
+    <h2>9) Tipos de investidores (classificação que cai em enunciado)</h2>
+
+    <div class="grid">
+      <div class="card compact cols-6">
+        <h3>Investidor Qualificado</h3>
+        <ul>
+          <li>Em prova: pessoa com <b>≥ R$ 1 milhão</b> em investimentos (critério típico cobrado).</li>
+          <li>Também pode envolver certificações reconhecidas (como regra de mercado).</li>
+          <li>Acesso a produtos mais complexos (conforme regras).</li>
+        </ul>
+      </div>
+
+      <div class="card compact cols-6">
+        <h3>Investidor Profissional</h3>
+        <ul>
+          <li>Em prova: pessoa com <b>≥ R$ 10 milhões</b> em investimentos (critério típico cobrado).</li>
+          <li>Inclui instituições financeiras e participantes profissionais do mercado.</li>
+          <li>Maior acesso a estruturas e menor proteção regulatória em certos produtos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+    <div class="callout">
+      <b>Regra de prova:</b> Se o enunciado dá R$ 1,5 milhão → qualificado.
+      Se dá R$ 12 milhões → profissional.
+    </div>
+  </section>
+
+  <section class="card anchor" id="infra">
+    <h2>10) Infraestrutura e sistemas (SPB / SELIC / B3)</h2>
+
+    <div class="grid">
+      <div class="card compact cols-6">
+        <h3>SPB (Sistema de Pagamentos Brasileiro)</h3>
+        <ul>
+          <li>Conjunto de sistemas e procedimentos para transferências e liquidação no sistema financeiro.</li>
+          <li>Foco: reduzir risco sistêmico (liquidação segura).</li>
+        </ul>
+      </div>
+
+      <div class="card compact cols-6">
+        <h3>SELIC (Sistema Especial de Liquidação e Custódia)</h3>
+        <ul>
+          <li>SELIC é o sistema de liquidação e custódia de <b>títulos públicos federais</b>.</li>
+          <li>Cai em prova como: “onde ficam custodiados?” → <b>SELIC</b>.</li>
+        </ul>
+        <div class="tag ok">Títulos públicos = SELIC</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>B3</h3>
+    <ul>
+      <li>Ambiente de negociação e infraestrutura do mercado (bolsa, clearing, etc.).</li>
+      <li>Negociação de ações, derivativos, ETFs, FIIs e outros instrumentos.</li>
+    </ul>
+  </section>
+
+  <section class="card anchor" id="pegadinhas">
+    <h2>11) Pegadinhas clássicas (pra tu não errar por bobeira)</h2>
+    <ul>
+      <li><b>CMN</b> define diretrizes; <b>BACEN</b> executa e supervisiona bancos.</li>
+      <li><b>CVM</b> regula valores mobiliários e fundos; <b>SUSEP</b> regula seguros/capitalização/previdência aberta.</li>
+      <li><b>PREVIC</b> fiscaliza previdência fechada (fundos de pensão).</li>
+      <li><b>ANBIMA</b> é autorregulação (não é órgão estatal).</li>
+      <li><b>Autonomia</b> do BACEN ≠ “independência do Estado”.</li>
+      <li>SELIC = sistema de custódia/liquidação de <b>títulos públicos</b>.</li>
+    </ul>
+  </section>
+
+  <section class="card anchor" id="quiz">
+    <h2>12) Mini-quiz (corrige sozinho)</h2>
+
+    <div class="quiz" data-quiz="sfn1">
+      <button class="btn" onclick="gradeQuiz('sfn1')">CORRIGIR QUIZ</button>
+      <button class="btn" onclick="resetQuiz('sfn1')">LIMPAR</button>
+      <div class="result" id="res_sfn1">Escolhe as alternativas e clica em CORRIGIR.</div>
+
+      <div class="q" data-answer="c">
+        <div class="stem">Q1) Quem define diretrizes da política monetária?</div>
+        <label><input type="radio" name="q1" value="a"> a) BACEN</label>
+        <label><input type="radio" name="q1" value="b"> b) CVM</label>
+        <label><input type="radio" name="q1" value="c"> c) CMN</label>
+        <label><input type="radio" name="q1" value="d"> d) ANBIMA</label>
+      </div>
+
+      <div class="q" data-answer="b">
+        <div class="stem">Q2) Quem fiscaliza o mercado de valores mobiliários (ações, fundos, ofertas)?</div>
+        <label><input type="radio" name="q2" value="a"> a) BACEN</label>
+        <label><input type="radio" name="q2" value="b"> b) CVM</label>
+        <label><input type="radio" name="q2" value="c"> c) SUSEP</label>
+        <label><input type="radio" name="q2" value="d"> d) PREVIC</label>
+      </div>
+
+      <div class="q" data-answer="c">
+        <div class="stem">Q3) Previdência complementar aberta é fiscalizada por:</div>
+        <label><input type="radio" name="q3" value="a"> a) PREVIC</label>
+        <label><input type="radio" name="q3" value="b"> b) CVM</label>
+        <label><input type="radio" name="q3" value="c"> c) SUSEP</label>
+        <label><input type="radio" name="q3" value="d"> d) BACEN</label>
+      </div>
+
+      <div class="q" data-answer="c">
+        <div class="stem">Q4) Títulos públicos federais são custodiados no:</div>
+        <label><input type="radio" name="q4" value="a"> a) SPB</label>
+        <label><input type="radio" name="q4" value="b"> b) B3</label>
+        <label><input type="radio" name="q4" value="c"> c) SELIC</label>
+        <label><input type="radio" name="q4" value="d"> d) SUSEP</label>
+      </div>
+
+    </div>
+
+    <div class="footer">Se tu quiser, eu adiciono um modo “random” com banco de 30 questões depois.</div>
+  </section>
+
+</main>
+
+<!-- ✅ TOC global (precisa estar em todas as páginas) -->
+<script src="./js/cpa20-ui.js" defer></script>
+
+<script>
+function gradeQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  const qs = quiz.querySelectorAll(".q");
+  let correct = 0;
+  let total = qs.length;
+
+  qs.forEach((q) => {
+    const ans = q.getAttribute("data-answer");
+    const chosen = q.querySelector('input[type="radio"]:checked');
+    const chosenVal = chosen ? chosen.value : null;
+
+    q.style.borderColor = "rgba(255,255,255,.10)";
+
+    if(chosenVal === ans){
+      correct++;
+      q.style.borderColor = "rgba(66,211,146,.45)";
+    }else{
+      q.style.borderColor = "rgba(251,113,133,.45)";
+    }
+  });
+
+  const res = document.getElementById(`res_${id}`);
+  const pct = Math.round((correct/total)*100);
+  res.innerHTML = `Resultado: <span class="${pct>=75?'good':'badx'}">${correct}/${total} (${pct}%)</span> — ${pct>=75?'bom':'refaz as pegadinhas e tenta de novo'}.`;
+}
+
+function resetQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  quiz.querySelectorAll('input[type="radio"]').forEach(i => i.checked=false);
+  quiz.querySelectorAll(".q").forEach(q => q.style.borderColor = "rgba(255,255,255,.10)");
+  document.getElementById(`res_${id}`).textContent = "Escolhe as alternativas e clica em CORRIGIR.";
+}
+</script>
+
+</body>
+</html>

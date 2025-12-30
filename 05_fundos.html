@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPA-20 | Bloco 5 — Fundos de Investimento</title>
+  <link rel="stylesheet" href="./style.css" />
+
+
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <a href="./index.html" style="text-decoration:none;">CPA-20</a>
+        <span class="badge">Resumo Visual</span>
+      </div>
+
+      <div class="links">
+        <a class="pill" href="./01_sfn.html">SFN</a>
+        <a class="pill" href="./02_compliance_etica_api.html">Compliance</a>
+        <a class="pill" href="./03_economia_financas.html">Economia</a>
+        <a class="pill" href="./04_produtos_rv_rf_deriv_coe_cripto.html">Produtos</a>
+        <a class="pill" href="./05_fundos.html" aria-current="page">Fundos</a>
+        <a class="pill" href="./06_previdencia.html">Previdência</a>
+        <a class="pill" href="./07_risco_performance.html">Risco</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TOC / Sumário retrátil -->
+<nav id="toc" class="toc" data-toc-scope="main.wrap" data-toc-levels="2,3" aria-label="Sumário">
+  <div class="toc__header">
+    <div class="toc__title">Sumário</div>
+    <button id="toc-pin" class="toc__pin" type="button" aria-label="Fixar sumário" title="Fixar sumário">📌</button>
+  </div>
+  <ul class="toc__list"></ul>
+</nav>
+
+<main class="wrap">
+  <h1>Bloco 5 — Fundos de Investimento (CVM 175 e o que a prova cobra)</h1>
+
+  <section class="card" id="mapa-mental-do-bloco">
+    <h2>Mapa mental do bloco</h2>
+    <div class="flow">
+      <div class="node"><strong>Estrutura</strong><span>Condomínio, cotas, patrimônio separado</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Papéis</strong><span>Administrador, gestor, distribuidor, custodiante</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Características</strong><span>Aberto/fechado, taxas, cotização, liquidação</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Classes</strong><span>RF, Ações, MM, Cambial, ETF, FII, FIDC...</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Tributação</strong><span>Come-cotas, alíquotas, isenções</span></div>
+    </div>
+    <div class="hr"></div>
+    <div class="tag warn">Cai MUITO: papéis e responsabilidades + aberto/fechado + cotização + taxas + come-cotas + diferenças FII/ETF/FIDC</div>
+  </section>
+
+  <!-- 5.1 Conceito/estrutura -->
+  <section class="card" id="51-o-que-e-fundo-sem-enrolacao">
+    <h2>5.1 O que é fundo (sem enrolação)</h2>
+
+    <div class="grid">
+      <div class="card compact cols-7">
+        <h3>Definição operacional (nível prova)</h3>
+        <ul>
+          <li>Fundo é um <b>condomínio</b> de investidores (cotistas).</li>
+          <li>O cotista compra <b>cotas</b>, que representam uma fração do <b>patrimônio líquido (PL)</b>.</li>
+          <li>O PL do fundo é <b>separado</b> do patrimônio do administrador/gestor (regra fundamental de proteção).</li>
+          <li>A rentabilidade depende do desempenho dos ativos do fundo <b>menos</b> custos/taxas.</li>
+        </ul>
+        <div class="callout" style="margin-top:12px;">
+          <b>Pegadinha:</b> Fundo não “promete” retorno. Ele <b>administra recursos</b> conforme política e risco.
+        </div>
+      </div>
+
+      <div class="card compact cols-5">
+        <h3>Valor da cota</h3>
+        <div class="code">Valor da Cota = (Patrimônio Líquido do Fundo) / (Nº de cotas)</div>
+        <ul>
+          <li>Cota sobe: PL subiu ou nº de cotas caiu</li>
+          <li>Cota cai: PL caiu ou nº de cotas subiu (ex.: custos, perdas)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>Condomínio: o que isso implica</h3>
+    <table class="table">
+      <thead><tr><th>Característica</th><th>O que significa</th><th>Como cai na prova</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Comunhão de recursos</b></td>
+          <td>Vários cotistas no mesmo veículo</td>
+          <td>“O fundo é um condomínio” (verdadeiro)</td>
+        </tr>
+        <tr>
+          <td><b>Cota ≠ ação</b></td>
+          <td>Cota não dá voto societário em empresa; dá direitos conforme regulamento do fundo</td>
+          <td>Prova tenta confundir com acionista</td>
+        </tr>
+        <tr>
+          <td><b>Regulamento + lâmina</b></td>
+          <td>Documentos principais de regras, política, riscos, taxas</td>
+          <td>Onde ver risco, taxa, prazo, cotização</td>
+        </tr>
+        <tr>
+          <td><b>PL separado</b></td>
+          <td>Fundo tem patrimônio separado do administrador/gestor</td>
+          <td>Proteção: insolvência do administrador não “mistura” PL do fundo</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5.2 Estrutura: administrador/gestor/custodiante/distribuidor -->
+  <section class="card" id="52-quem-faz-o-que-isso-decide-a-prova">
+    <h2>5.2 Quem faz o quê (isso decide a prova)</h2>
+
+    <h3>Os 4 papéis que tu tem que saber no automático</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Agente</th>
+          <th>Função principal</th>
+          <th>Responsabilidades típicas</th>
+          <th>Pegadinhas ANBIMA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Administrador fiduciário</b></td>
+          <td>“Dono do compliance” do fundo: estrutura, regulamento, controles e prestação de informações</td>
+          <td>
+            <ul>
+              <li>Constitui o fundo e registra</li>
+              <li>Contrata prestadores (ex.: gestor/custódia)</li>
+              <li>Divulga informações e documentos</li>
+              <li>Zela pela aderência às normas e ao regulamento</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Não é “quem escolhe ativos” (isso é do gestor)</li>
+              <li>É quem responde pela estrutura e governança do fundo</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Gestor</b></td>
+          <td>Toma decisões de investimento (alocação, compra/venda, risco)</td>
+          <td>
+            <ul>
+              <li>Define estratégia e monta carteira</li>
+              <li>Segue política de investimento</li>
+              <li>Gerencia risco e liquidez dentro do mandato</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Gestor não “garante” retorno</li>
+              <li>Se o fundo der ruim, não é “fraude” automaticamente</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Custodiante</b></td>
+          <td>Guarda e controla os ativos (custódia + liquidação)</td>
+          <td>
+            <ul>
+              <li>Registra posição</li>
+              <li>Liquida operações</li>
+              <li>Controle de eventos (ex.: proventos)</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Custódia ≠ gestão</li>
+              <li>Custodiante não decide investimento</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Distribuidor</b></td>
+          <td>Oferta e relacionamento com o investidor (venda do fundo)</td>
+          <td>
+            <ul>
+              <li>Suitability do produto ao cliente</li>
+              <li>Informações adequadas e transparência</li>
+              <li>Canal de aplicação/resgate</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Distribuidor tem dever forte de <b>adequação</b></li>
+              <li>“Cliente pediu” não elimina responsabilidade</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+    <div class="callout">
+      <b>Regra de prova:</b> Se a questão fala em “escolha dos ativos”, é <b>gestor</b>.
+      Se fala em “estrutura, regras, prestação de informações”, é <b>administrador</b>.
+      Se fala em “guardar e liquidar”, é <b>custodiante</b>.
+      Se fala em “ofertar e suitability”, é <b>distribuidor</b>.
+    </div>
+  </section>
+
+  <!-- 5.3 Aberto x fechado; cotização -->
+  <section class="card" id="53-fundo-aberto-x-fundo-fechado-e-cotizacao">
+    <h2>5.3 Fundo aberto x fundo fechado (e cotização)</h2>
+
+    <div class="grid">
+      <div class="card compact cols-6">
+        <h3>Fundo aberto</h3>
+        <ul>
+          <li>Permite <b>entrada e saída</b> (aplicação e resgate) conforme regras.</li>
+          <li>Resgate é feito junto ao fundo (não precisa “vender para outro investidor”).</li>
+          <li>Liquidez depende de <b>cotização</b> + prazo de pagamento.</li>
+        </ul>
+        <div class="tag ok">Mais comum para RF/MM/Ações tradicionais</div>
+      </div>
+
+      <div class="card compact cols-6">
+        <h3>Fundo fechado</h3>
+        <ul>
+          <li>Não permite resgate a qualquer tempo (regra geral).</li>
+          <li>Para sair antes do término, o cotista costuma precisar <b>negociar cotas</b> (se houver mercado) ou esperar liquidação.</li>
+          <li>Comum em estruturas como <b>FII, FIP</b> e alguns veículos de crédito estruturado.</li>
+        </ul>
+        <div class="tag warn">Pegadinha: fechado não = “sem risco”; só muda a saída</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>Cotização x Pagamento (onde a prova pega)</h3>
+    <table class="table">
+      <thead><tr><th>Termo</th><th>O que é</th><th>Exemplo prático</th><th>Pegadinha</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Cotização</b></td>
+          <td>Dia em que o valor da cota é usado para calcular quantas cotas você compra (aplicação) ou quanto recebe (resgate)</td>
+          <td>Resgate D+10: a cotização pode ocorrer em D+2 e o pagamento em D+10</td>
+          <td>Confundir cotização com pagamento</td>
+        </tr>
+        <tr>
+          <td><b>Pagamento</b></td>
+          <td>Dia em que o dinheiro efetivamente entra/saí da sua conta</td>
+          <td>Você “trava” o preço (cotização) antes de receber</td>
+          <td>Prova pergunta “quando o cotista conhece o valor do resgate?” → cotização</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:12px;">
+      <b>Ponto que cai:</b> Liquidez percebida pelo investidor = <b>prazo de cotização</b> + <b>prazo de pagamento</b>.
+    </div>
+  </section>
+
+  <!-- 5.4 Taxas -->
+  <section class="card" id="54-taxas-a-prova-cobra-definicao-e-efeito">
+    <h2>5.4 Taxas (a prova cobra definição e efeito)</h2>
+
+    <table class="table">
+      <thead><tr><th>Taxa</th><th>O que é</th><th>Como incide</th><th>Pegadinhas</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Administração</b></td>
+          <td>Remunera a estrutura do fundo (administração + serviços)</td>
+          <td>Percentual ao ano sobre PL (normalmente apropriada diariamente)</td>
+          <td>“Taxa de adm é paga só no resgate” → falso (geralmente embutida no dia a dia)</td>
+        </tr>
+        <tr>
+          <td><b>Performance</b></td>
+          <td>Remunera se o fundo superar um <b>benchmark</b> (ou regra definida)</td>
+          <td>Percentual sobre o que exceder o benchmark; pode ter “cristalização”</td>
+          <td>Benchmark e regra importam: sem superar, não há cobrança</td>
+        </tr>
+        <tr>
+          <td><b>Entrada / Saída</b></td>
+          <td>Tarifa na aplicação e/ou no resgate</td>
+          <td>Percentual do valor aplicado/resgatado</td>
+          <td>Prova confunde com “carência”</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>Benchmark (por que importa)</h3>
+    <ul>
+      <li>É a referência para comparar performance (ex.: CDI, Ibovespa, IPCA+).</li>
+      <li>Taxa de performance quase sempre depende de <b>superar benchmark</b>.</li>
+      <li>Benchmark <b>não garante</b> retorno do fundo; é só régua.</li>
+    </ul>
+  </section>
+
+  <!-- 5.5 Tipos de fundos (classificação) -->
+  <section class="card" id="55-principais-classes-o-que-cai-em-diferencas">
+    <h2>5.5 Principais classes (o que cai em “diferenças”)</h2>
+
+    <h3>Comparativo rápido</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Classe</th>
+          <th>Onde investe</th>
+          <th>Risco típico</th>
+          <th>Perfil</th>
+          <th>Pegadinha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Renda Fixa</b></td>
+          <td>Títulos públicos e privados (crédito/juros)</td>
+          <td>Juros, crédito, liquidez</td>
+          <td>Conservador a moderado</td>
+          <td>RF ≠ sem risco</td>
+        </tr>
+        <tr>
+          <td><b>Ações</b></td>
+          <td>Renda variável (ações/BDRs etc.)</td>
+          <td>Volatilidade alta</td>
+          <td>Agressivo / longo prazo</td>
+          <td>“Ações sempre rendem mais” → falso</td>
+        </tr>
+        <tr>
+          <td><b>Multimercado</b></td>
+          <td>Mix: juros, câmbio, bolsa, crédito, derivativos</td>
+          <td>Depende da estratégia (pode ser alto)</td>
+          <td>Variável</td>
+          <td>Multi pode ter alavancagem</td>
+        </tr>
+        <tr>
+          <td><b>Cambial</b></td>
+          <td>Variação de moeda (USD, EUR etc.)</td>
+          <td>Risco cambial</td>
+          <td>Hedge / diversificação</td>
+          <td>Não confundir com “ganhar sempre com dólar”</td>
+        </tr>
+        <tr>
+          <td><b>ETF</b></td>
+          <td>Replica índice (bolsa)</td>
+          <td>Risco do índice</td>
+          <td>Passivo / diversificação</td>
+          <td>ETF é fundo, mas negocia em bolsa</td>
+        </tr>
+        <tr>
+          <td><b>FII</b></td>
+          <td>Imóveis/recebíveis/ativos imobiliários</td>
+          <td>Mercado, vacância, juros, liquidez</td>
+          <td>Renda/fluxo + diversificação</td>
+          <td>FII geralmente é fechado (saída via bolsa)</td>
+        </tr>
+        <tr>
+          <td><b>FIDC</b></td>
+          <td>Direitos creditórios (recebíveis)</td>
+          <td>Crédito + estrutura</td>
+          <td>Freq. qualificado/profissional</td>
+          <td>Não tem FGC; estrutura pode ter subordinadas</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>ETF x Fundo “normal” (diferença operacional)</h3>
+    <ul>
+      <li><b>ETF</b> é fundo, mas a cota costuma ser negociada em bolsa como uma ação.</li>
+      <li>Preço de negociação pode diferir levemente do valor patrimonial (depende de liquidez/mercado).</li>
+      <li>Objetivo típico: <b>replicar índice</b> (gestão passiva).</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <h3>FII (o que a banca costuma cobrar)</h3>
+    <ul>
+      <li>Normalmente <b>condomínio fechado</b> (saída via venda de cota no mercado).</li>
+      <li>Riscos: vacância, inadimplência, mercado imobiliário, juros (impacta valuation), liquidez.</li>
+      <li>Receitas: aluguéis, arrendamentos, CRIs/recebíveis, ganho de capital.</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <h3>FIDC (estrutura em 30 segundos)</h3>
+    <ul>
+      <li>Investe em <b>direitos creditórios</b> (recebíveis: cartão, duplicatas, consignado etc.).</li>
+      <li>Estruturas comuns com cotas <b>sênior</b> e <b>subordinada</b> para absorver perdas.</li>
+      <li>Não é “garantido”; é risco de crédito + estrutura/servicer.</li>
+    </ul>
+  </section>
+
+  <!-- 5.6 Tributação -->
+  <section class="card" id="56-tributacao-onde-a-prova-tenta-te-derrubar">
+    <h2>5.6 Tributação (onde a prova tenta te derrubar)</h2>
+
+    <div class="grid">
+      <div class="card compact cols-7">
+        <h3>Come-cotas (muito cobrado)</h3>
+        <ul>
+          <li>Antecipação de IR em certos fundos (clássico: <b>renda fixa</b> e <b>multimercados</b> em geral).</li>
+          <li>O fundo “come” cotas do investidor para recolher imposto (reduz nº de cotas, não necessariamente o valor da cota).</li>
+          <li>O objetivo é antecipar parte do IR ao longo do tempo.</li>
+        </ul>
+        <div class="callout" style="margin-top:12px;">
+          <b>Como a banca pega:</b> come-cotas ≠ “taxa”. É <b>IR antecipado</b>.
+        </div>
+      </div>
+
+      <div class="card compact cols-5">
+        <h3>Ganho de capital em resgate</h3>
+        <ul>
+          <li>IR incide sobre <b>ganho</b> (diferença entre valor de resgate e custo).</li>
+          <li>Regras variam por classe e prazo (prova não exige conta, exige conceito).</li>
+        </ul>
+        <div class="tag warn">Decorar: quais fundos têm come-cotas</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>Regras rápidas (memorização de prova)</h3>
+    <table class="table">
+      <thead><tr><th>Item</th><th>Regra de prova</th><th>Armadilha</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Come-cotas</b></td>
+          <td>Antecipação de IR em fundos típicos de RF/MM</td>
+          <td>Confundir com taxa de administração</td>
+        </tr>
+        <tr>
+          <td><b>FII</b></td>
+          <td>Costuma ser tratado com regras próprias; foco da prova é diferença operacional/fechado/bolsa</td>
+          <td>Confundir FII com “fundo aberto” de RF</td>
+        </tr>
+        <tr>
+          <td><b>ETF</b></td>
+          <td>Negociação em bolsa; lógica mais próxima de RV para o investidor</td>
+          <td>Assumir “resgate D+X” como fundo aberto</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5.7 Riscos -->
+  <section class="card" id="57-riscos-em-fundos-cai-muito-em-enunciado">
+    <h2>5.7 Riscos em fundos (cai muito em enunciado)</h2>
+
+    <div class="grid">
+      <div class="card compact cols-6">
+        <h3>Riscos básicos</h3>
+        <ul>
+          <li><b>Mercado</b>: variação de preços/taxas.</li>
+          <li><b>Crédito</b>: inadimplência do emissor/cedente.</li>
+          <li><b>Liquidez</b>: dificuldade de vender ativos ou pagar resgates sem perda.</li>
+          <li><b>Operacional</b>: falhas de processo/sistema/controles.</li>
+        </ul>
+      </div>
+      <div class="card compact cols-6">
+        <h3>Risco de resgate (quando existe)</h3>
+        <ul>
+          <li>Fundos abertos têm risco de “corrida” (muitos resgates) se carteira for ilíquida.</li>
+          <li>Por isso existem regras de cotização/pagamento e gestão de liquidez.</li>
+          <li>Fundo fechado reduz risco de resgate, mas aumenta risco de liquidez do cotista (precisa vender cota).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="checklist-final-fundos">
+    <h2>Checklist final — Fundos</h2>
+    <div class="kv">
+      <div class="item"><div class="label">Decorar</div><div class="value">Quem faz o quê (adm/gestor/custódia/distribuidor); aberto x fechado; cotização x pagamento; taxas; come-cotas (conceito)</div></div>
+      <div class="item"><div class="label">Entender</div><div class="value">Como cota funciona; como riscos aparecem no enunciado; por que FII/ETF diferem operacionalmente</div></div>
+      <div class="item"><div class="label">Pegadinhas</div><div class="value">RF ≠ sem risco; fundo ≠ promessa; cotização ≠ pagamento; come-cotas ≠ taxa</div></div>
+      <div class="item"><div class="label">Próximo passo</div><div class="value">Simulado HARD do Bloco 5 (20 questões) + correção comentada</div></div>
+    </div>
+    <div class="footer">Quando tu terminar a leitura, pede “simulado Bloco 5” e eu te derrubo com as pegadinhas certas.</div>
+  </section>
+
+
+  <section class="card quiz" id="quiz">
+    <h2>Quiz rápido — Fundos de Investimento</h2>
+    <p style="opacity:.85;margin-top:-6px">Fecha a página com pontos: faz o quiz e mede se tu tá pronto pro simulado.</p>
+    
+      <div class="q" data-q="q1" data-correct="b">
+        <div class="q-title">1. Em um fundo, quem é responsável pela administração fiduciária e pelos deveres formais do fundo?</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q1" value="a"> <span>Gestor</span></label>
+<label><input type="radio" name="q1" value="b"> <span>Administrador</span></label>
+<label><input type="radio" name="q1" value="c"> <span>Custodiante</span></label>
+<label><input type="radio" name="q1" value="d"> <span>Distribuidor</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q2" data-correct="c">
+        <div class="q-title">2. Fundo aberto x fundo fechado: qual é a diferença central?</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q2" value="a"> <span>Aberto não tem regulamento</span></label>
+<label><input type="radio" name="q2" value="b"> <span>Fechado permite resgate a qualquer momento</span></label>
+<label><input type="radio" name="q2" value="c"> <span>Aberto permite resgates conforme regras; fechado não permite resgate, apenas negociação/saídas previstas</span></label>
+<label><input type="radio" name="q2" value="d"> <span>Fechado é sempre de ações</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q3" data-correct="b">
+        <div class="q-title">3. “Come-cotas” é:</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q3" value="a"> <span>Taxa de performance cobrada do cotista</span></label>
+<label><input type="radio" name="q3" value="b"> <span>Antecipação semestral do IR em alguns fundos (principalmente renda fixa)</span></label>
+<label><input type="radio" name="q3" value="c"> <span>IOF cobrado no resgate de fundos de ações</span></label>
+<label><input type="radio" name="q3" value="d"> <span>IR mensal obrigatório em qualquer fundo</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q4" data-correct="b">
+        <div class="q-title">4. Em geral, a taxa de administração é:</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q4" value="a"> <span>Cobrada apenas no resgate</span></label>
+<label><input type="radio" name="q4" value="b"> <span>Cobrança recorrente do fundo pela gestão/serviços, reduzindo a rentabilidade</span></label>
+<label><input type="radio" name="q4" value="c"> <span>Isenta em fundos cambiais</span></label>
+<label><input type="radio" name="q4" value="d"> <span>Um imposto federal</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q5" data-correct="a">
+        <div class="q-title">5. Qual é um risco típico de fundos, mesmo com carteira diversificada?</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q5" value="a"> <span>Risco de mercado (oscilação dos ativos)</span></label>
+<label><input type="radio" name="q5" value="b"> <span>Garantia de rentabilidade negativa</span></label>
+<label><input type="radio" name="q5" value="c"> <span>FGC parcial</span></label>
+<label><input type="radio" name="q5" value="d"> <span>Câmbio fixo</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q6" data-correct="b">
+        <div class="q-title">6. Quando um fundo investe majoritariamente em crédito privado, isso implica:</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q6" value="a"> <span>Menor risco de crédito que Tesouro</span></label>
+<label><input type="radio" name="q6" value="b"> <span>Possível aumento de risco de crédito e de liquidez</span></label>
+<label><input type="radio" name="q6" value="c"> <span>Isenção de IR</span></label>
+<label><input type="radio" name="q6" value="d"> <span>Proibição de resgate</span></label>
+        </div>
+      </div>
+    <div class="actions">
+      <button type="button" data-quiz-submit>Corrigir</button>
+      <button type="button" data-quiz-reset>Limpar</button>
+    </div>
+    <div class="result" data-quiz-result style="display:none"></div>
+  </section>
+
+</main>
+
+<script src="./js/cpa20-ui.js" defer></script>
+
+</body>
+</html>

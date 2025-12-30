@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPA-20 | Bloco 6 — Previdência Complementar (Aberta e Fechada)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <a href="./index.html" style="text-decoration:none;">CPA-20</a>
+        <span class="badge">Resumo Visual</span>
+      </div>
+
+      <div class="links">
+        <a class="pill" href="./01_sfn.html">SFN</a>
+        <a class="pill" href="./02_compliance_etica_api.html">Compliance</a>
+        <a class="pill" href="./03_economia_financas.html">Economia</a>
+        <a class="pill" href="./04_produtos_rv_rf_deriv_coe_cripto.html">Produtos</a>
+        <a class="pill" href="./05_fundos.html">Fundos</a>
+        <a class="pill" href="./06_previdencia.html" aria-current="page">Previdência</a>
+        <a class="pill" href="./07_risco_performance.html">Risco</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ✅ TOC retrátil padrão (igual Produtos/Fundos) -->
+<nav id="toc" data-toc-scope="main.wrap" data-toc-levels="2,3">
+  <div class="toc__header">
+    <div class="toc__title">Sumário</div>
+    <button id="toc-pin" class="toc__pin" type="button" title="Fixar sumário">📌</button>
+  </div>
+  <ul class="toc__list"></ul>
+</nav>
+
+<main class="wrap">
+  <h1>Previdência Complementar — PGBL, VGBL, regimes de IR, SUSEP e PREVIC</h1>
+
+  <div class="layout">
+
+    <div>
+
+      <section class="card anchor" id="visao">
+        <h2>1) Visão geral (o que a prova quer)</h2>
+
+        <div class="callout">
+          <b>Ideia central:</b> Previdência complementar é planejamento de longo prazo com regras de
+          <b>contribuição</b>, <b>acumulação</b> e <b>benefício</b>.
+          A prova cobra:
+          <ul>
+            <li>diferença entre <b>aberta</b> e <b>fechada</b> (SUSEP vs PREVIC)</li>
+            <li><b>PGBL x VGBL</b> (base de IR na entrada e na saída)</li>
+            <li><b>IR progressivo x regressivo</b> (lógica de longo prazo)</li>
+            <li>portabilidade, resgate, taxas e pegadinhas</li>
+          </ul>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="kpi">
+          <div class="box"><b>Aberta</b><span>vendida ao público por seguradoras; fiscalizada pela <b>SUSEP</b>.</span></div>
+          <div class="box"><b>Fechada</b><span>fundos de pensão (grupo restrito); fiscalizada pela <b>PREVIC</b>.</span></div>
+          <div class="box"><b>PGBL</b><span>benefício fiscal na contribuição (até 12% da renda bruta tributável) e IR na saída sobre o total.</span></div>
+          <div class="box"><b>VGBL</b><span>sem dedução na entrada; IR na saída incide sobre o ganho (rendimento).</span></div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="siglas">
+        <h2>2) Siglas (todas explicadas)</h2>
+        <table class="table">
+          <thead><tr><th>Sigla</th><th>Significado</th><th>Onde aparece / o que é</th></tr></thead>
+          <tbody>
+            <tr><td><span class="gloss">SUSEP</span></td><td>Superintendência de Seguros Privados</td><td>Regula e fiscaliza seguros, capitalização e previdência <b>aberta</b>.</td></tr>
+            <tr><td><span class="gloss">PREVIC</span></td><td>Superintendência Nacional de Previdência Complementar</td><td>Fiscaliza e supervisiona previdência complementar <b>fechada</b> (fundos de pensão).</td></tr>
+            <tr><td><span class="gloss">EFPC</span></td><td>Entidade Fechada de Previdência Complementar</td><td>“Fundo de pensão”: previdência fechada para grupos restritos.</td></tr>
+            <tr><td><span class="gloss">EAPC</span></td><td>Entidade Aberta de Previdência Complementar</td><td>Seguradora/entidade que comercializa planos abertos (PGBL/VGBL).</td></tr>
+            <tr><td><span class="gloss">PGBL</span></td><td>Plano Gerador de Benefício Livre</td><td>Plano aberto com benefício fiscal na contribuição (condicionado a regras do IR).</td></tr>
+            <tr><td><span class="gloss">VGBL</span></td><td>Vida Gerador de Benefício Livre</td><td>Plano aberto (natureza “seguro de pessoa” em prova), IR na saída sobre rendimentos.</td></tr>
+            <tr><td><span class="gloss">IR</span></td><td>Imposto de Renda</td><td>Regimes: progressivo ou regressivo (na previdência).</td></tr>
+            <tr><td><span class="gloss">PF</span></td><td>Pessoa Física</td><td>Regras de tributação aplicadas ao investidor pessoa física.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card anchor" id="aberta">
+        <h2>3) Previdência aberta (SUSEP / EAPC)</h2>
+
+        <div class="grid">
+          <div class="card compact cols-7">
+            <h3>O que é</h3>
+            <ul>
+              <li>Plano oferecido ao público por <b>seguradoras</b> (ou entidades abertas).</li>
+              <li>Fiscalização e regulação: <span class="gloss">SUSEP</span>.</li>
+              <li>Produtos típicos: <span class="gloss">PGBL</span> e <span class="gloss">VGBL</span>.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-5">
+            <h3>Como cai em prova</h3>
+            <ul>
+              <li>“Previdência aberta é fiscalizada por…” → <b>SUSEP</b></li>
+              <li>“Plano vendido por seguradora ao público” → aberta</li>
+            </ul>
+            <div class="tag warn">Pegadinha: aberta ≠ “sem regra”. Tem IR, taxas e carências.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="fechada">
+        <h2>4) Previdência fechada (PREVIC / EFPC)</h2>
+
+        <div class="grid">
+          <div class="card compact cols-7">
+            <h3>O que é</h3>
+            <ul>
+              <li>Previdência para grupo restrito: empregados de uma empresa, associados de entidade etc.</li>
+              <li>Entidade: <span class="gloss">EFPC</span> (fundo de pensão).</li>
+              <li>Fiscalização e supervisão: <span class="gloss">PREVIC</span>.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-5">
+            <h3>Como cai em prova</h3>
+            <ul>
+              <li>“Fundo de pensão” → <b>fechada</b></li>
+              <li>“Fiscalizada por…” → <b>PREVIC</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Regra de prova:</b> Aberta = SUSEP. Fechada = PREVIC.
+        </div>
+      </section>
+
+      <section class="card anchor" id="pgblvgb">
+        <h2>5) PGBL x VGBL (diferença que mais cai)</h2>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th><span class="gloss">PGBL</span></th>
+              <th><span class="gloss">VGBL</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Benefício fiscal na entrada</b></td>
+              <td><b>Sim</b> (até 12% da renda bruta tributável, quando aplicável)</td>
+              <td><b>Não</b></td>
+            </tr>
+            <tr>
+              <td><b>Base de IR na saída</b></td>
+              <td>IR incide sobre <b>o total</b> resgatado/benefício (principal + rendimentos)</td>
+              <td>IR incide sobre <b>os rendimentos</b> (ganho)</td>
+            </tr>
+            <tr>
+              <td><b>Perfil típico de uso</b></td>
+              <td>Quem declara IR e quer deduzir contribuição (quando elegível)</td>
+              <td>Quem não usa dedução (ou quer IR só sobre ganho)</td>
+            </tr>
+            <tr>
+              <td><b>Pegadinha</b></td>
+              <td>“PGBL sempre melhor” → falso (depende do caso)</td>
+              <td>“VGBL é isento” → falso (tributa o ganho)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="hr"></div>
+
+        <div class="callout">
+          <b>Mantra:</b> PGBL deduz na entrada e tributa <b>tudo</b> na saída.  
+          VGBL não deduz na entrada e tributa <b>só o ganho</b> na saída.
+        </div>
+      </section>
+
+      <section class="card anchor" id="ir">
+        <h2>6) IR na previdência: Progressiva x Regressiva</h2>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>Tabela progressiva</h3>
+            <ul>
+              <li>Alíquota depende do <b>valor recebido</b> (como renda).</li>
+              <li>Costuma fazer sentido quando a renda futura prevista não é tão alta.</li>
+              <li>Mais “parecida” com IR normal do dia a dia.</li>
+            </ul>
+            <div class="tag warn">A prova cobra lógica, não cálculo.</div>
+          </div>
+
+          <div class="card compact cols-6">
+            <h3>Tabela regressiva</h3>
+            <ul>
+              <li>Alíquota depende do <b>tempo de acumulação</b>.</li>
+              <li>Em geral: <b>quanto mais tempo, menor a alíquota</b>.</li>
+              <li>É a cara de “previdência de longo prazo”.</li>
+            </ul>
+            <div class="tag ok">Regressiva favorece horizonte longo.</div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Como a prova pergunta</h3>
+        <ul>
+          <li>“Qual regime favorece longo prazo?” → <b>regressivo</b>.</li>
+          <li>“No progressivo, depende do quê?” → do <b>valor/renda</b>.</li>
+          <li>“No regressivo, depende do quê?” → do <b>tempo</b>.</li>
+        </ul>
+      </section>
+
+      <section class="card anchor" id="portabilidade">
+        <h2>7) Portabilidade, resgate, carência e benefícios</h2>
+
+        <div class="grid">
+          <div class="card compact cols-7">
+            <h3>Portabilidade</h3>
+            <ul>
+              <li>Transferência do plano para outro (mesma natureza, respeitando regras).</li>
+              <li>Objetivo: melhorar taxa, gestor, estratégia, instituição.</li>
+              <li>Em prova: portabilidade é diferente de resgate (não é “sacar”).</li>
+            </ul>
+          </div>
+          <div class="card compact cols-5">
+            <h3>Resgate</h3>
+            <ul>
+              <li>Saída do dinheiro do plano para o participante.</li>
+              <li>Incide IR conforme regime escolhido (progressivo ou regressivo).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Carência (o que é)</h3>
+        <ul>
+          <li>Prazo mínimo para realizar determinadas operações (ex.: resgate/portabilidade), conforme regras do plano.</li>
+          <li>A banca confunde carência com “taxa de saída” — não é a mesma coisa.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Pegadinha:</b> “Portabilidade = resgate sem imposto” → errado. Portabilidade segue regras próprias e não é “sacar”.
+        </div>
+      </section>
+
+      <section class="card anchor" id="taxas">
+        <h2>8) Taxas (onde tu perde ponto se confundir)</h2>
+
+        <table class="table">
+          <thead><tr><th>Taxa</th><th>O que é</th><th>Como impacta</th><th>Pegadinha</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Taxa de administração</b></td>
+              <td>Remunera gestão/estrutura do plano/fundo</td>
+              <td>Reduz rentabilidade ao longo do tempo</td>
+              <td>“Baixa diferença não importa” → em longo prazo importa muito</td>
+            </tr>
+            <tr>
+              <td><b>Carregamento</b></td>
+              <td>Taxa cobrada na entrada e/ou na saída, conforme plano</td>
+              <td>Come parte do aporte ou do resgate</td>
+              <td>Confundir com “carência”</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Prova:</b> Se a questão fala “tempo mínimo”, é <b>carência</b>.  
+          Se fala “cobrança percentual na entrada/saída”, é <b>carregamento</b>.
+        </div>
+      </section>
+
+      <section class="card anchor" id="riscos">
+        <h2>9) Riscos e adequação (suitability aplicado)</h2>
+        <ul>
+          <li>Previdência é <b>longo prazo</b>: risco de mercado e estratégia importa.</li>
+          <li>O cliente precisa entender: liquidez (carência/cotização), taxas, regime de IR e objetivo.</li>
+          <li>Adequação: não empurrar plano só por “benefício fiscal” se a liquidez não serve.</li>
+        </ul>
+        <div class="tag warn">Pegadinha: benefício fiscal não transforma plano ruim em bom.</div>
+      </section>
+
+      <section class="card anchor" id="pegadinhas">
+        <h2>10) Pegadinhas clássicas (decora)</h2>
+        <ul>
+          <li><b>SUSEP</b> fiscaliza previdência <b>aberta</b> (PGBL/VGBL).</li>
+          <li><b>PREVIC</b> fiscaliza previdência <b>fechada</b> (EFPC/fundos de pensão).</li>
+          <li><b>PGBL</b>: IR na saída sobre <b>total</b> (principal + rendimento).</li>
+          <li><b>VGBL</b>: IR na saída sobre <b>rendimento</b>.</li>
+          <li><b>Regressivo</b>: favorece longo prazo (alíquota cai com o tempo).</li>
+          <li><b>Portabilidade</b> ≠ resgate.</li>
+          <li><b>Carência</b> ≠ carregamento.</li>
+        </ul>
+      </section>
+
+      <section class="card anchor" id="quiz">
+        <h2>11) Mini-quiz (corrige sozinho)</h2>
+
+        <div class="quiz" data-quiz="prev1">
+          <button class="btn" onclick="gradeQuiz('prev1')">CORRIGIR QUIZ</button>
+          <button class="btn" onclick="resetQuiz('prev1')">LIMPAR</button>
+          <div class="result" id="res_prev1">Escolhe as alternativas e clica em CORRIGIR.</div>
+
+          <div class="q" data-answer="b">
+            <div class="stem">Q1) Previdência complementar aberta é fiscalizada por:</div>
+            <label><input type="radio" name="q1" value="a"> a) PREVIC</label>
+            <label><input type="radio" name="q1" value="b"> b) SUSEP</label>
+            <label><input type="radio" name="q1" value="c"> c) CVM</label>
+            <label><input type="radio" name="q1" value="d"> d) BACEN</label>
+          </div>
+
+          <div class="q" data-answer="c">
+            <div class="stem">Q2) No VGBL, o IR na saída incide sobre:</div>
+            <label><input type="radio" name="q2" value="a"> a) O total resgatado (principal + rendimentos)</label>
+            <label><input type="radio" name="q2" value="b"> b) Apenas o principal</label>
+            <label><input type="radio" name="q2" value="c"> c) Apenas os rendimentos (ganho)</label>
+            <label><input type="radio" name="q2" value="d"> d) Não há incidência de IR</label>
+          </div>
+
+          <div class="q" data-answer="a">
+            <div class="stem">Q3) O regime regressivo de IR favorece:</div>
+            <label><input type="radio" name="q3" value="a"> a) Longo prazo</label>
+            <label><input type="radio" name="q3" value="b"> b) Curtíssimo prazo</label>
+            <label><input type="radio" name="q3" value="c"> c) Operações intraday</label>
+            <label><input type="radio" name="q3" value="d"> d) Não depende do tempo</label>
+          </div>
+
+          <div class="q" data-answer="b">
+            <div class="stem">Q4) Portabilidade é:</div>
+            <label><input type="radio" name="q4" value="a"> a) Resgate com isenção de IR</label>
+            <label><input type="radio" name="q4" value="b"> b) Transferência do plano para outro, conforme regras</label>
+            <label><input type="radio" name="q4" value="c"> c) Pagamento de taxa de carregamento</label>
+            <label><input type="radio" name="q4" value="d"> d) Benefício vitalício automático</label>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Próximo passo</h2>
+        <div class="kv">
+          <div class="item"><div class="label">Agora</div><div class="value">Lê 1x e faz o mini-quiz.</div></div>
+          <div class="item"><div class="label">Depois</div><div class="value">Pede “simulado hard Bloco 6” (15–20 questões).</div></div>
+          <div class="item"><div class="label">Cai muito</div><div class="value">PGBL vs VGBL; IR progressivo vs regressivo; SUSEP vs PREVIC; portabilidade/resgate</div></div>
+          <div class="item"><div class="label">Pegadinha</div><div class="value">carência ≠ carregamento; benefício fiscal ≠ produto adequado</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<!-- ✅ TOC global -->
+<script src="./js/cpa20-ui.js" defer></script>
+
+<script>
+function gradeQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  const qs = quiz.querySelectorAll(".q");
+  let correct = 0;
+  let total = qs.length;
+
+  qs.forEach((q) => {
+    const ans = q.getAttribute("data-answer");
+    const chosen = q.querySelector('input[type="radio"]:checked');
+    const chosenVal = chosen ? chosen.value : null;
+    q.style.borderColor = "rgba(255,255,255,.10)";
+
+    if(chosenVal === ans){
+      correct++;
+      q.style.borderColor = "rgba(66,211,146,.45)";
+    }else{
+      q.style.borderColor = "rgba(251,113,133,.45)";
+    }
+  });
+
+  const res = document.getElementById(`res_${id}`);
+  const pct = Math.round((correct/total)*100);
+  res.innerHTML = `Resultado: <span class="${pct>=75?'good':'badx'}">${correct}/${total} (${pct}%)</span> — ${pct>=75?'bom':'refaz e tenta de novo'}.`;
+}
+
+function resetQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  quiz.querySelectorAll('input[type="radio"]').forEach(i => i.checked=false);
+  quiz.querySelectorAll(".q").forEach(q => q.style.borderColor = "rgba(255,255,255,.10)");
+  document.getElementById(`res_${id}`).textContent = "Escolhe as alternativas e clica em CORRIGIR.";
+}
+</script>
+
+</body>
+</html>

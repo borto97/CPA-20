@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPA-20 | Bloco 3 — Economia e Finanças</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <a href="./index.html" style="text-decoration:none;">CPA-20</a>
+        <span class="badge">Resumo Visual</span>
+      </div>
+
+      <div class="links">
+        <a class="pill" href="./01_sfn.html">SFN</a>
+        <a class="pill" href="./02_compliance_etica_api.html">Compliance</a>
+        <a class="pill active" href="./03_economia_financas.html" aria-current="page">Economia</a>
+        <a class="pill" href="./04_produtos_rv_rf_deriv_coe_cripto.html">Produtos</a>
+        <a class="pill" href="./05_fundos.html">Fundos</a>
+        <a class="pill" href="./06_previdencia.html">Previdência</a>
+        <a class="pill" href="./07_risco_performance.html">Risco</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ✅ TOC retrátil padrão (igual Produtos/Fundos) -->
+<nav id="toc" data-toc-scope="main.wrap" data-toc-levels="2,3">
+  <div class="toc__header">
+    <div class="toc__title">Sumário</div>
+    <button id="toc-pin" class="toc__pin" type="button" title="Fixar sumário">📌</button>
+  </div>
+  <ul class="toc__list"></ul>
+</nav>
+
+<main class="wrap">
+  <h1>Economia e Finanças (Bloco 3) — o que a CPA-20 cobra</h1>
+
+  <div class="layout">
+    <div>
+
+      <section class="card anchor" id="mapa">
+        <h2>1) Mapa mental (é isso que cai)</h2>
+        <div class="flow">
+          <div class="node"><strong>Atividade</strong><span>PIB, emprego, produção</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Preços</strong><span>inflação (IPCA etc.)</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Juros</strong><span>SELIC/COPOM</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Câmbio</strong><span>USD/BRL, fluxos</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Impacto</strong><span>RF/RV, crédito, fundos</span></div>
+        </div>
+
+        <div class="hr"></div>
+        <div class="callout">
+          <b>Como a banca pergunta:</b> “Se inflação sobe, o que tende a acontecer com juros?”,  
+          “Se juros sobem, o que acontece com títulos prefixados?”,  
+          “Câmbio desvaloriza: quem ganha/perde?”,  
+          “PIB fraco: que classe tende a sofrer?”
+        </div>
+      </section>
+
+      <section class="card anchor" id="pib">
+        <h2>2) PIB (Produto Interno Bruto) e crescimento</h2>
+        <div class="grid">
+          <div class="card compact cols-7">
+            <h3>O que é PIB</h3>
+            <ul>
+              <li>Valor de bens e serviços finais produzidos no país em um período.</li>
+              <li>Indicador de <b>atividade econômica</b>.</li>
+              <li>Cai como: economia aquecendo x desacelerando.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-5">
+            <h3>PIB pela demanda (forma de prova)</h3>
+            <div class="code">PIB = C + I + G + (X − M)</div>
+            <ul>
+              <li><b>C</b>: consumo</li>
+              <li><b>I</b>: investimento</li>
+              <li><b>G</b>: gasto do governo</li>
+              <li><b>X−M</b>: exportações líquidas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:12px;">
+          <b>Pegadinha:</b> PIB alto não significa automaticamente “melhor distribuição” ou “menor desigualdade”.
+        </div>
+      </section>
+
+      <section class="card anchor" id="inflacao">
+        <h2>3) Inflação e índices (IPCA, IGP-M) + efeito nos ativos</h2>
+
+        <table class="table">
+          <thead><tr><th>Índice</th><th>O que mede</th><th>Onde aparece</th></tr></thead>
+          <tbody>
+            <tr><td><b>IPCA</b></td><td>Inflação ao consumidor (referência principal)</td><td>Meta de inflação (base do regime)</td></tr>
+            <tr><td><b>IGP-M</b></td><td>Índice amplo (inclui atacado, consumidor, construção)</td><td>Aluguéis e alguns contratos</td></tr>
+          </tbody>
+        </table>
+
+        <div class="hr"></div>
+        <div class="callout">
+          <b>Regra de prova:</b> inflação ↑ tende a pressionar juros ↑ (política monetária mais restritiva).
+        </div>
+      </section>
+
+      <section class="card anchor" id="selic">
+        <h2>4) SELIC e COPOM (transmissão para economia)</h2>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>SELIC</h3>
+            <ul>
+              <li>Taxa básica de juros da economia.</li>
+              <li>Afeta custo de crédito, consumo, investimento e preços de ativos.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-6">
+            <h3>COPOM</h3>
+            <ul>
+              <li>Comitê de Política Monetária (do BACEN).</li>
+              <li>Define a meta da SELIC nas reuniões.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Transmissão (do juros ao investimento)</h3>
+        <div class="flow">
+          <div class="node"><strong>Juros ↑</strong><span>custo do dinheiro sobe</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Crédito ↓</strong><span>consumo e investimento caem</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Atividade ↓</strong><span>PIB desacelera</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Inflação ↓</strong><span>pressão de demanda reduz</span></div>
+        </div>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Ligação com Bloco 7:</b> juros ↑ → preço de título prefixado ↓ (marcação a mercado).
+        </div>
+      </section>
+
+      <section class="card anchor" id="cambio">
+        <h2>5) Câmbio (USD/BRL) e balanço de pagamentos</h2>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>Câmbio: apreciação x depreciação</h3>
+            <ul>
+              <li><b>Depreciação do real</b> = dólar mais caro (USD/BRL sobe).</li>
+              <li><b>Apreciação do real</b> = dólar mais barato (USD/BRL cai).</li>
+              <li>Cai como: impacto em importadoras/exportadoras e inflação.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-6">
+            <h3>Efeitos típicos (prova)</h3>
+            <ul>
+              <li>Real desvaloriza → importados ficam mais caros → pode pressionar inflação.</li>
+              <li>Exportadores tendem a se beneficiar (receita em USD).</li>
+              <li>Importadores tendem a sofrer (custo em USD).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="politicas">
+        <h2>6) Políticas econômicas (fiscal, monetária e cambial)</h2>
+
+        <table class="table">
+          <thead><tr><th>Política</th><th>Quem conduz</th><th>Instrumentos</th><th>Objetivo típico</th></tr></thead>
+          <tbody>
+            <tr><td><b>Monetária</b></td><td>BACEN / COPOM</td><td>SELIC, compulsório, open market</td><td>Controlar inflação/atividade</td></tr>
+            <tr><td><b>Fiscal</b></td><td>Governo (Tesouro)</td><td>Gastos, impostos, resultado primário</td><td>Atividade e sustentabilidade da dívida</td></tr>
+            <tr><td><b>Cambial</b></td><td>BACEN</td><td>Intervenções/derivativos, reservas</td><td>Suavizar volatilidade cambial</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Pegadinha:</b> política monetária é do BACEN; política fiscal é do governo (não confundir).
+        </div>
+      </section>
+
+      <section class="card anchor" id="indicadores">
+        <h2>7) Indicadores de atividade e emprego (o que costuma aparecer)</h2>
+        <ul>
+          <li><b>Desemprego</b>: mercado de trabalho e renda disponível.</li>
+          <li><b>Inflação</b>: poder de compra e decisões do BACEN.</li>
+          <li><b>PIB/produção</b>: ciclo econômico.</li>
+        </ul>
+        <div class="tag warn">A banca quer relação causal simples, não econometria.</div>
+      </section>
+
+      <section class="card anchor" id="efeitos">
+        <h2>8) Efeitos macro nos investimentos (conexão com Blocos 4–7)</h2>
+
+        <table class="table">
+          <thead><tr><th>Choque</th><th>Efeito provável</th><th>Onde aparece</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Juros ↑</b></td>
+              <td>Prefixados caem; crédito encarece; RV pode sofrer</td>
+              <td>Marcação a mercado (Bloco 7)</td>
+            </tr>
+            <tr>
+              <td><b>Inflação ↑</b></td>
+              <td>Pressiona juros; favorece indexados à inflação</td>
+              <td>Títulos IPCA+ (Bloco 4)</td>
+            </tr>
+            <tr>
+              <td><b>Câmbio ↑ (USD/BRL)</b></td>
+              <td>Exportadores tendem a ganhar; importadores podem perder</td>
+              <td>Ações/Setores (Bloco 4)</td>
+            </tr>
+            <tr>
+              <td><b>PIB ↓</b></td>
+              <td>Setores cíclicos sofrem; risco de crédito pode piorar</td>
+              <td>Fundos/Crédito (Bloco 5/7)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card anchor" id="pegadinhas">
+        <h2>9) Pegadinhas do Bloco 3</h2>
+        <ul>
+          <li>Inflação ↑ → tende a juros ↑ (resposta padrão de prova).</li>
+          <li>Juros ↑ → preço de prefixado ↓ (marcação a mercado).</li>
+          <li>Real desvaloriza = dólar sobe (USD/BRL ↑).</li>
+          <li>Exportador geralmente se beneficia de dólar alto; importador sofre.</li>
+          <li>Fiscal ≠ Monetária (governo ≠ BACEN).</li>
+        </ul>
+      </section>
+
+      <section class="card anchor" id="quiz">
+        <h2>10) Mini-quiz (auto-correção)</h2>
+
+        <div class="quiz" data-quiz="eco1">
+          <button class="btn" onclick="gradeQuiz('eco1')">CORRIGIR QUIZ</button>
+          <button class="btn" onclick="resetQuiz('eco1')">LIMPAR</button>
+          <div class="result" id="res_eco1">Escolhe as alternativas e clica em CORRIGIR.</div>
+
+          <div class="q" data-answer="a">
+            <div class="stem">Q1) Inflação persistentemente acima da meta tende a:</div>
+            <label><input type="radio" name="q1" value="a"> a) Pressionar alta de juros</label>
+            <label><input type="radio" name="q1" value="b"> b) Zerá-los automaticamente</label>
+            <label><input type="radio" name="q1" value="c"> c) Reduzir risco de crédito</label>
+            <label><input type="radio" name="q1" value="d"> d) Não afetar política monetária</label>
+          </div>
+
+          <div class="q" data-answer="b">
+            <div class="stem">Q2) Se USD/BRL sobe, isso significa:</div>
+            <label><input type="radio" name="q2" value="a"> a) Real valorizou</label>
+            <label><input type="radio" name="q2" value="b"> b) Real desvalorizou</label>
+            <label><input type="radio" name="q2" value="c"> c) Juros caíram sempre</label>
+            <label><input type="radio" name="q2" value="d"> d) PIB subiu necessariamente</label>
+          </div>
+
+          <div class="q" data-answer="c">
+            <div class="stem">Q3) Política fiscal é conduzida principalmente por:</div>
+            <label><input type="radio" name="q3" value="a"> a) CVM</label>
+            <label><input type="radio" name="q3" value="b"> b) SUSEP</label>
+            <label><input type="radio" name="q3" value="c"> c) Governo (Tesouro)</label>
+            <label><input type="radio" name="q3" value="d"> d) ANBIMA</label>
+          </div>
+
+          <div class="q" data-answer="a">
+            <div class="stem">Q4) A alta de juros tende a impactar títulos prefixados como:</div>
+            <label><input type="radio" name="q4" value="a"> a) Queda de preço</label>
+            <label><input type="radio" name="q4" value="b"> b) Alta de preço</label>
+            <label><input type="radio" name="q4" value="c"> c) Nenhum efeito</label>
+            <label><input type="radio" name="q4" value="d"> d) Isenção de IR</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Bloco 3 pronto</h2>
+        <div class="kv">
+          <div class="item"><div class="label">Agora</div><div class="value">Lê 1x e faz o quiz (é rápido).</div></div>
+          <div class="item"><div class="label">Depois</div><div class="value">Pede “simulado hard Bloco 3” (15–20 questões).</div></div>
+          <div class="item"><div class="label">Ponto-chave</div><div class="value">Causalidade simples: inflação→juros; juros→preço de título; câmbio→setores</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<script src="./js/cpa20-ui.js" defer></script>
+
+<script>
+function gradeQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  const qs = quiz.querySelectorAll(".q");
+  let correct = 0;
+  let total = qs.length;
+
+  qs.forEach((q) => {
+    const ans = q.getAttribute("data-answer");
+    const chosen = q.querySelector('input[type="radio"]:checked');
+    const chosenVal = chosen ? chosen.value : null;
+    q.style.borderColor = "rgba(255,255,255,.10)";
+
+    if(chosenVal === ans){
+      correct++;
+      q.style.borderColor = "rgba(66,211,146,.45)";
+    }else{
+      q.style.borderColor = "rgba(251,113,133,.45)";
+    }
+  });
+
+  const res = document.getElementById(`res_${id}`);
+  const pct = Math.round((correct/total)*100);
+  res.innerHTML = `Resultado: <span class="${pct>=75?'good':'badx'}">${correct}/${total} (${pct}%)</span> — ${pct>=75?'bom':'refaz e tenta de novo'}.`;
+}
+
+function resetQuiz(id){
+  const quiz = document.querySelector(`.quiz[data-quiz="${id}"]`);
+  quiz.querySelectorAll('input[type="radio"]').forEach(i => i.checked=false);
+  quiz.querySelectorAll(".q").forEach(q => q.style.borderColor = "rgba(255,255,255,.10)");
+  document.getElementById(`res_${id}`).textContent = "Escolhe as alternativas e clica em CORRIGIR.";
+}
+</script>
+
+</body>
+</html>

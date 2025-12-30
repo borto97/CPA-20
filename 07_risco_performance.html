@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPA-20 | Bloco 7 — Risco e Performance</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <a href="./index.html" style="text-decoration:none;">CPA-20</a>
+        <span class="badge">Resumo Visual</span>
+      </div>
+
+      <div class="links">
+        <a class="pill" href="./01_sfn.html">SFN</a>
+        <a class="pill" href="./02_compliance_etica_api.html">Compliance</a>
+        <a class="pill" href="./03_economia_financas.html">Economia</a>
+        <a class="pill" href="./04_produtos_rv_rf_deriv_coe_cripto.html">Produtos</a>
+        <a class="pill" href="./05_fundos.html">Fundos</a>
+        <a class="pill" href="./06_previdencia.html">Previdência</a>
+        <a class="pill" href="./07_risco_performance.html" aria-current="page">Risco</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ✅ TOC retrátil padrão (igual Produtos/Fundos) -->
+<nav id="toc" data-toc-scope="main.wrap" data-toc-levels="2,3">
+  <div class="toc__header">
+    <div class="toc__title">Sumário</div>
+    <button id="toc-pin" class="toc__pin" type="button" title="Fixar sumário">📌</button>
+  </div>
+  <ul class="toc__list"></ul>
+</nav>
+
+<main class="wrap">
+  <h1>Risco e Performance — métricas, VaR, juros, crédito, liquidez e stress</h1>
+
+      <section class="card anchor" id="visao">
+        <h2>1) Visão geral (o que cai de verdade)</h2>
+
+        <div class="callout">
+          <b>Como a prova te derruba:</b> ela descreve um cenário e pergunta
+          “qual risco é esse?” ou “qual métrica usar?”.
+          Tu precisa reconhecer:
+          <ul>
+            <li><b>Risco</b> (mercado, crédito, liquidez, operacional)</li>
+            <li><b>Medida</b> (volatilidade, duration, VaR, stress)</li>
+            <li><b>Performance ajustada</b> ao risco (Sharpe/Treynor/Sortino)</li>
+          </ul>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="flow">
+          <div class="node"><strong>Risco</strong><span>Identificar o “tipo”</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Medição</strong><span>Escolher métrica</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Controle</strong><span>Limites/hedge/diversificação</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>Performance</strong><span>Retorno por unidade de risco</span></div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="siglas">
+        <h2>2) Siglas (todas explicadas)</h2>
+        <table class="table">
+          <thead><tr><th>Sigla</th><th>Significado</th><th>Uso em prova</th></tr></thead>
+          <tbody>
+            <tr><td><span class="gloss">VaR</span></td><td>Value at Risk (Valor em Risco)</td><td>Perda potencial em um horizonte e nível de confiança (não é “pior caso”).</td></tr>
+            <tr><td><span class="gloss">ES / CVaR</span></td><td>Expected Shortfall / Conditional VaR</td><td>Média das perdas além do VaR (cauda). Quando banca fala “pior que VaR”.</td></tr>
+            <tr><td><span class="gloss">DV01</span></td><td>Dollar Value of 1bp</td><td>Sensibilidade do preço a 1 ponto-base (0,01%) na taxa.</td></tr>
+            <tr><td><span class="gloss">bp</span></td><td>basis point (ponto-base)</td><td>1 bp = 0,01% = 0,0001 em termos decimais.</td></tr>
+            <tr><td><span class="gloss">Sharpe</span></td><td>Índice de Sharpe</td><td>Retorno excedente por unidade de risco total (volatilidade).</td></tr>
+            <tr><td><span class="gloss">Treynor</span></td><td>Índice de Treynor</td><td>Retorno excedente por unidade de risco sistemático (beta).</td></tr>
+            <tr><td><span class="gloss">Sortino</span></td><td>Índice de Sortino</td><td>Como Sharpe, mas considera apenas risco de queda (downside).</td></tr>
+            <tr><td><span class="gloss">Alpha</span></td><td>Retorno acima do explicado pelo risco (modelo)</td><td>“Ganho do gestor” (em linguagem de prova).</td></tr>
+            <tr><td><span class="gloss">Beta</span></td><td>Sensibilidade ao mercado (risco sistemático)</td><td>Beta>1 mais volátil que mercado; beta<1 mais defensivo.</td></tr>
+            <tr><td><span class="gloss">TE</span></td><td>Tracking Error</td><td>Quanto a carteira desvia do benchmark (risco ativo).</td></tr>
+            <tr><td><span class="gloss">CDI</span></td><td>Certificado de Depósito Interbancário (taxa DI)</td><td>Benchmark comum em RF / multimercado; proxy de “livre de risco” em prova.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card anchor" id="risco">
+        <h2>3) Tipos de risco (reconhecer no enunciado)</h2>
+
+        <table class="table">
+          <thead><tr><th>Risco</th><th>Definição</th><th>Como aparece</th><th>Controle típico</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Mercado</b></td>
+              <td>Oscilação de preços/taxas/câmbio/índices</td>
+              <td>“Juros subiram e o título caiu”; “bolsa caiu e fundo despencou”</td>
+              <td>Diversificação, hedge, limites, duration</td>
+            </tr>
+            <tr>
+              <td><b>Crédito</b></td>
+              <td>Emissor/cedente não pagar (default)</td>
+              <td>“Debênture do emissor X piorou rating”; “inadimplência”</td>
+              <td>Análise, diversificação, garantias, covenants</td>
+            </tr>
+            <tr>
+              <td><b>Liquidez</b></td>
+              <td>Dificuldade de vender ativo sem grande desconto</td>
+              <td>“Fundo não consegue pagar resgates sem vender com perda”</td>
+              <td>Caixa, ativos líquidos, prazos de cotização/pagamento</td>
+            </tr>
+            <tr>
+              <td><b>Operacional</b></td>
+              <td>Falhas de processo/sistema/pessoas</td>
+              <td>Erro de execução, fraude interna, falha de controle</td>
+              <td>Controles internos, segregação, auditoria</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="hr"></div>
+
+        <div class="ruler">
+          <div class="bar"></div>
+          <div class="labels">
+            <span>baixo risco</span><span>médio</span><span>alto risco</span>
+          </div>
+          <div class="small" style="margin-top:10px;">
+            A prova gosta de: risco <b>não é só volatilidade</b>. Crédito e liquidez derrubam no mundo real.
+          </div>
+        </div>
+      </section>
+
+      <section class="card anchor" id="juros">
+        <h2>4) Risco de juros (duration/convexidade + marcação a mercado)</h2>
+
+        <div class="callout">
+          <b>Regra-mãe:</b> Em renda fixa, quando a <b>taxa de juros sobe</b>, o <b>preço do título cai</b> (e vice-versa).
+          Isso é a base da marcação a mercado.
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>Marcação a mercado</h3>
+            <ul>
+              <li>Atualização do valor do ativo pelo preço de mercado.</li>
+              <li>Impacta performance de curto prazo (mesmo sem vender o título).</li>
+              <li>Maior sensibilidade: títulos com prazo longo e cupons baixos (regra de prova).</li>
+            </ul>
+          </div>
+          <div class="card compact cols-6">
+            <h3>Duration (intuição de prova)</h3>
+            <ul>
+              <li>Medida de sensibilidade do preço à taxa de juros.</li>
+              <li><b>Maior duration</b> → maior impacto no preço para mudanças na taxa.</li>
+              <li>Prazo maior e fluxo mais “no final” → duration maior.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Timeline de sensibilidade (jeito que cai)</h3>
+        <div class="timeline">
+          <div class="step"><b>1) Prazo ↑</b><div class="small">Preço fica mais sensível a juros (duration ↑).</div></div>
+          <div class="step"><b>2) Juros ↑</b><div class="small">Preço do título ↓ (marcação a mercado negativa).</div></div>
+          <div class="step"><b>3) Convexidade</b><div class="small">A relação não é perfeitamente linear; ajuda a refinar sensibilidade (a banca cobra conceito).</div></div>
+          <div class="step"><b>4) DV01</b><div class="small">Quanto o preço varia para 1 bp (0,01%) de mudança na taxa.</div></div>
+        </div>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Pegadinha:</b> “Se eu segurar até o vencimento, não existe risco.”  
+          Existe risco de <b>marcação a mercado</b> no caminho e risco de <b>reinversão</b> / oportunidade.
+        </div>
+      </section>
+
+      <section class="card anchor" id="var">
+        <h2>5) VaR, Stress e Backtesting (fluxo completo)</h2>
+
+        <div class="grid">
+          <div class="card compact cols-7">
+            <h3>VaR (Value at Risk)</h3>
+            <ul>
+              <li>Estimativa de perda potencial em um <b>horizonte</b> para um <b>nível de confiança</b>.</li>
+              <li>Ex.: “VaR diário 95% = R$ X” → em 95% dos dias, a perda não deve exceder X.</li>
+              <li><b>Não</b> é “pior caso” e não descreve a cauda extrema (a banca cobra isso).</li>
+            </ul>
+          </div>
+          <div class="card compact cols-5">
+            <h3>ES / CVaR (cauda)</h3>
+            <ul>
+              <li>Média das perdas <b>além do VaR</b> (pior parte da distribuição).</li>
+              <li>Quando a questão fala “perdas extremas” → pensa ES/CVaR.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Fluxo de gestão de risco (como a banca descreve)</h3>
+        <div class="flow">
+          <div class="node"><strong>1) Medir</strong><span>VaR / DV01 / volatilidade</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>2) Stress</strong><span>choques e cenários extremos</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>3) Limites</strong><span>travas e exposição máxima</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><strong>4) Backtesting</strong><span>ver se o modelo “acerta”</span></div>
+        </div>
+
+        <div class="hr"></div>
+
+        <table class="table">
+          <thead><tr><th>Ferramenta</th><th>Serve para</th><th>Limitação (pegadinha)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>VaR</b></td>
+              <td>Perda potencial “normal” com confiança</td>
+              <td>Não captura bem caudas/choques</td>
+            </tr>
+            <tr>
+              <td><b>Stress test</b></td>
+              <td>Ver comportamento em cenários extremos</td>
+              <td>Depende do cenário escolhido</td>
+            </tr>
+            <tr>
+              <td><b>Backtesting</b></td>
+              <td>Comparar previsões com perdas reais</td>
+              <td>Passado não garante futuro; regimes mudam</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card anchor" id="perf">
+        <h2>6) Performance ajustada ao risco (onde a prova te cobra precisão)</h2>
+
+        <div class="metrics">
+          <div class="metric">
+            <div class="top">
+              <div class="name">Sharpe</div>
+              <div class="chip">risco total</div>
+            </div>
+            <div class="desc">Retorno excedente por unidade de volatilidade (risco total).</div>
+            <div class="formula">Sharpe = (Rp − Rf) / σp
+Rp: retorno da carteira
+Rf: retorno “livre de risco” (em prova: CDI)
+σp: volatilidade da carteira</div>
+          </div>
+
+          <div class="metric">
+            <div class="top">
+              <div class="name">Treynor</div>
+              <div class="chip">risco sistemático</div>
+            </div>
+            <div class="desc">Retorno excedente por unidade de beta (risco de mercado).</div>
+            <div class="formula">Treynor = (Rp − Rf) / βp
+βp: sensibilidade ao mercado</div>
+          </div>
+
+          <div class="metric">
+            <div class="top">
+              <div class="name">Sortino</div>
+              <div class="chip">downside</div>
+            </div>
+            <div class="desc">Como Sharpe, mas só penaliza volatilidade de queda (ruim).</div>
+            <div class="formula">Sortino = (Rp − Rf) / DownsideDeviation
+Foco: risco de queda</div>
+          </div>
+
+          <div class="metric">
+            <div class="top">
+              <div class="name">Alpha</div>
+              <div class="chip">excesso</div>
+            </div>
+            <div class="desc">Retorno acima do “esperado” pelo risco (interpretação de prova: habilidade do gestor).</div>
+            <div class="formula">α ≈ Rp − [Rf + βp (Rm − Rf)]
+Rm: retorno do mercado</div>
+          </div>
+
+          <div class="metric">
+            <div class="top">
+              <div class="name">Beta</div>
+              <div class="chip">sensibilidade</div>
+            </div>
+            <div class="desc">Quanto a carteira oscila em relação ao mercado.</div>
+            <div class="formula">β > 1: mais volátil que mercado
+β = 1: igual ao mercado
+β < 1: mais defensivo</div>
+          </div>
+
+          <div class="metric">
+            <div class="top">
+              <div class="name">Volatilidade</div>
+              <div class="chip">dispersão</div>
+            </div>
+            <div class="desc">Medida de variabilidade dos retornos. A banca usa como “risco”.</div>
+            <div class="formula">σ (desvio padrão)
+Maior σ → maior oscilação</div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Quando usar qual métrica (resposta direta de prova)</h3>
+        <table class="table">
+          <thead><tr><th>Cenário</th><th>Métrica melhor</th><th>Por quê</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Comparar carteiras bem diversificadas (risco total importa)</td>
+              <td><b>Sharpe</b></td>
+              <td>Usa volatilidade total</td>
+            </tr>
+            <tr>
+              <td>Carteira é parte de portfólio amplo (só risco sistemático importa)</td>
+              <td><b>Treynor</b></td>
+              <td>Usa beta</td>
+            </tr>
+            <tr>
+              <td>Investidor se preocupa mais com perdas do que com alta</td>
+              <td><b>Sortino</b></td>
+              <td>Penaliza só downside</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout" style="margin-top:12px;">
+          <b>Pegadinha:</b> Sharpe usa <b>risco total</b>. Treynor usa <b>beta</b>.  
+          Se a questão fala “risco sistemático”, é Treynor.
+        </div>
+      </section>
+
+      <section class="card anchor" id="bench">
+        <h2>7) Benchmark, Tracking Error e gestão ativa vs passiva</h2>
+
+        <div class="grid">
+          <div class="card compact cols-6">
+            <h3>Benchmark</h3>
+            <ul>
+              <li>Régua de comparação (CDI, Ibovespa, IPCA+ etc.).</li>
+              <li>Não garante retorno; serve para medir desempenho.</li>
+            </ul>
+          </div>
+          <div class="card compact cols-6">
+            <h3>Tracking Error (TE)</h3>
+            <ul>
+              <li>Medida do desvio do fundo/carteira em relação ao benchmark.</li>
+              <li><b>TE alto</b> = gestão mais ativa (mais “diferente” do índice).</li>
+              <li><b>TE baixo</b> = mais próximo do índice (passivo/replicação).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <table class="table">
+          <thead><tr><th>Estilo</th><th>Objetivo</th><th>Como cai</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Gestão passiva</b></td>
+              <td>Replicar benchmark</td>
+              <td>ETF/índice; TE tende a ser baixo</td>
+            </tr>
+            <tr>
+              <td><b>Gestão ativa</b></td>
+              <td>Bater benchmark (gerar alpha)</td>
+              <td>TE tende a ser maior; risco ativo</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card anchor" id="pegadinhas">
+        <h2>8) Pegadinhas clássicas (decora e não erra)</h2>
+        <ul>
+          <li><b>VaR</b> não é pior caso; é perda com nível de confiança.</li>
+          <li><b>ES/CVaR</b> foca na cauda (perdas além do VaR).</li>
+          <li>Em RF: <b>juros ↑ → preço ↓</b> (marcação a mercado).</li>
+          <li><b>Duration ↑</b> → sensibilidade a juros ↑.</li>
+          <li><b>Sharpe</b> = risco total; <b>Treynor</b> = risco sistemático (beta).</li>
+          <li><b>Tracking Error</b> mede “o quanto desvia do índice”.</li>
+        </ul>
+      </section>
+
+      <section class="card anchor" id="quiz">
+        <h2>9) Mini-quiz (corrige sozinho)</h2>
+
+        <div class="quiz" data-quiz="risk1">
+          <button class="btn" onclick="gradeQuiz('risk1')">CORRIGIR QUIZ</button>
+          <button class="btn" onclick="resetQuiz('risk1')">LIMPAR</button>
+          <div class="result" id="res_risk1">Escolhe as alternativas e clica em CORRIGIR.</div>
+
+          <div class="q" data-answer="b">
+            <div class="stem">Q1) Se a taxa de juros sobe, o preço de um título prefixado tende a:</div>
+            <label><input type="radio" name="q1" value="a"> a) Subir</label>
+            <label><input type="radio" name="q1" value="b"> b) Cair</label>
+            <label><input type="radio" name="q1" value="c"> c) Não mudar</label>
+            <label><input type="radio" name="q1" value="d"> d) Virar “sem risco”</label>
+          </div>
+
+          <div class="q" data-answer="c">
+            <div class="stem">Q2) VaR representa:</div>
+            <label><input type="radio" name="q2" value="a"> a) A pior perda possível</label>
+            <label><input type="radio" name="q2" value="b"> b) O retorno garantido</label>
+            <label><input type="radio" name="q2" value="c"> c) Perda potencial em horizonte e confiança</label>
+            <label><input type="radio" name="q2" value="d"> d) A média das perdas extremas</label>
+          </div>
+
+          <div class="q" data-answer="a">
+            <div class="stem">Q3) O índice de Treynor usa como medida de risco:</div>
+            <label><input type="radio" name="q3" value="a"> a) Beta</label>
+            <label><input type="radio" name="q3" value="b"> b) Volatilidade total</label>
+            <label><input type="radio" name="q3" value="c"> c) Duration</label>
+            <label><input type="radio" name="q3" value="d"> d) Tracking error</label>
+          </div>
+
+          <div class="q" data-answer="b">
+            <div class="stem">Q4) Tracking Error mede:</div>
+            <label><input type="radio" name="q4" value="a"> a) Risco de crédito do emissor</label>
+            <label><input type="radio" name="q4" value="b"> b) Desvio da carteira em relação ao benchmark</label>
+            <label><input type="radio" name="q4" value="c"> c) Pior perda possível</label>
+            <label><input type="radio" name="q4" value="d"> d) Custos de corretagem</label>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Próximo passo</h2>
+        <div class="kv">
+          <div class="item"><div class="label">Agora</div><div class="value">Lê 1x, faz o quiz e marca onde errou.</div></div>
+          <div class="item"><div class="label">Depois</div><div class="value">Pede “simulado hard Bloco 7” (20 questões).</div></div>
+          <div class="item"><div class="label">Mais cobrados</div><div class="value">Juros↑ preço↓; duration; VaR vs ES; Sharpe vs Treynor; tracking error.</div></div>
+          <div class="item"><div class="label">Armadilha</div><div class="value">Confundir risco total com risco sistemático.</div></div>
+        </div>
+      </section>
+
+  </div>
+</main>
+
+<!-- ✅ TOC global -->
+<script src="./js/cpa20-ui.js" defer></script>
+
+<script>
+function gradeQuiz(id){
+  const quiz = document.querySelector('.quiz[data-quiz="' + id + '"]');
+  if (!quiz) return;
+
+  const qs = quiz.querySelectorAll(".q");
+  let correct = 0;
+  let total = qs.length;
+
+  qs.forEach((q) => {
+    const ans = q.getAttribute("data-answer");
+    const chosen = q.querySelector('input[type="radio"]:checked');
+    const chosenVal = chosen ? chosen.value : null;
+
+    q.style.borderColor = "rgba(255,255,255,.10)";
+
+    if (chosenVal === ans) {
+      correct++;
+      q.style.borderColor = "rgba(66,211,146,.45)";
+    } else {
+      q.style.borderColor = "rgba(251,113,133,.45)";
+    }
+  });
+
+  const res = document.getElementById("res_" + id);
+  if (!res) return;
+
+  const pct = total ? Math.round((correct/total)*100) : 0;
+  const cls = (pct >= 75) ? "good" : "badx";
+  const msg = (pct >= 75) ? "bom" : "refaz e tenta de novo";
+
+  res.innerHTML =
+    'Resultado: <span class="' + cls + '">' +
+    correct + "/" + total + " (" + pct + "%)</span> — " + msg + ".";
+}
+
+function resetQuiz(id){
+  const quiz = document.querySelector('.quiz[data-quiz="' + id + '"]');
+  if (!quiz) return;
+
+  quiz.querySelectorAll('input[type="radio"]').forEach(i => i.checked = false);
+  quiz.querySelectorAll(".q").forEach(q => q.style.borderColor = "rgba(255,255,255,.10)");
+
+  const res = document.getElementById("res_" + id);
+  if (res) res.textContent = "Escolhe as alternativas e clica em CORRIGIR.";
+}
+</script>
+
+</body>
+</html>

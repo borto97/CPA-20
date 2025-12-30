@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPA-20 | Bloco 4 — Produtos (RV/RF/Deriv/COE/Cripto)</title>
+  <link rel="stylesheet" href="./style.css" />
+
+
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <a href="./index.html" style="text-decoration:none;">CPA-20</a>
+        <span class="badge">Resumo Visual</span>
+      </div>
+
+      <div class="links">
+        <a class="pill" href="./01_sfn.html">SFN</a>
+        <a class="pill" href="./02_compliance_etica_api.html">Compliance</a>
+        <a class="pill" href="./03_economia_financas.html">Economia</a>
+        <a class="pill" href="./04_produtos_rv_rf_deriv_coe_cripto.html" aria-current="page">Produtos</a>
+        <a class="pill" href="./05_fundos.html">Fundos</a>
+        <a class="pill" href="./06_previdencia.html">Previdência</a>
+        <a class="pill" href="./07_risco_performance.html">Risco</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TOC / Sumário retrátil -->
+<nav id="toc" class="toc" data-toc-scope="main" data-toc-levels="2,3">
+  <div class="toc__header">
+    <div class="toc__title">Sumário</div>
+    <button id="toc-pin" class="toc__pin" type="button" title="Fixar sumário" aria-label="Fixar sumário">📌</button>
+  </div>
+  <ul class="toc__list"></ul>
+</nav>
+
+<main class="wrap">
+  <h1>Bloco 4 — Instrumentos (RV, RF, Derivativos, COE, Infra, Cripto) + Infraestrutura</h1>
+
+  <section class="card" id="mapa-mental-do-bloco">
+    <h2>Mapa mental do bloco</h2>
+    <div class="flow">
+      <div class="node"><strong>Renda Variável</strong><span>Ações, direitos, eventos, ofertas, governança, IR</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Renda Fixa</strong><span>Títulos públicos/privados, indexadores, FGC, marcação</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Derivativos</strong><span>Termo, futuro, swap, opções, NDF, IR</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>COE</strong><span>Capital protegido vs em risco, DIE, tributação</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Infra</strong><span>SELIC, B3, SPB, custódia, liquidação</span></div>
+    </div>
+    <div class="hr"></div>
+    <div class="tag warn">Cai muito: governança + IR + FGC + opções + COE + custódia</div>
+  </section>
+
+  <!-- RV -->
+  <section class="card" id="41-renda-variavel-acoes-o-que-a-prova-cobra">
+    <h2>4.1 Renda Variável — Ações (o que a prova cobra)</h2>
+
+    <div class="grid">
+      <div class="card compact cols-6">
+        <h3>Conceitos básicos</h3>
+        <ul>
+          <li><b>Ação ON</b>: dá <b>voto</b> (poder político).</li>
+          <li><b>Ação PN</b>: preferência econômica (geralmente) e voto limitado/ausente (depende do estatuto).</li>
+          <li><b>ADR/BDR</b>: recibos de depósito representando valores mobiliários (exposição a ativos/empresas estrangeiras).</li>
+        </ul>
+      </div>
+
+      <div class="card compact cols-6">
+        <h3>Direitos do acionista</h3>
+        <ul>
+          <li><b>Voto</b> (principal na ON)</li>
+          <li><b>Participação nos lucros</b> (dividendos/JCP)</li>
+          <li><b>Preferência de subscrição</b> (evita diluição)</li>
+          <li><b>Fiscalização</b> (informação, assembleias, etc.)</li>
+          <li><b>Retirada</b> em certas hipóteses (direito de recesso)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>Remuneração do acionista (cai em detalhe)</h3>
+    <table class="table">
+      <thead>
+        <tr><th>Tipo</th><th>O que é</th><th>Empresa</th><th>Acionista PF</th><th>Pegadinha</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Dividendos</b></td>
+          <td>Distribuição do lucro (política de dividendos)</td>
+          <td>Não é “despesa dedutível” como regra de prova</td>
+          <td>Em prova: tratado como isento (regra clássica cobrada)</td>
+          <td>Confundir com JCP</td>
+        </tr>
+        <tr>
+          <td><b>JCP</b></td>
+          <td>Juros sobre Capital Próprio</td>
+          <td><b>Dedutível</b> para fins fiscais (empresa)</td>
+          <td><b>IR na fonte</b> (PF)</td>
+          <td>Prova ama: “JCP é dedutível”</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>Eventos societários (efeito em preço/quantidade)</h3>
+    <table class="table">
+      <thead>
+        <tr><th>Evento</th><th>O que muda?</th><th>Impacto típico</th><th>Armadilha</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Dividendos</b></td>
+          <td>Fluxo de caixa ao acionista</td>
+          <td>Preço ajusta no ex-dividendo (teoria/ajuste)</td>
+          <td>“Dividendos aumentam preço” → não necessariamente</td>
+        </tr>
+        <tr>
+          <td><b>Split</b> (desdobramento)</td>
+          <td>Aumenta nº de ações</td>
+          <td>Preço unitário cai proporcionalmente</td>
+          <td>Valor total não muda por si</td>
+        </tr>
+        <tr>
+          <td><b>Grupamento</b></td>
+          <td>Reduz nº de ações</td>
+          <td>Preço unitário sobe proporcionalmente</td>
+          <td>Não é “ganho” automático</td>
+        </tr>
+        <tr>
+          <td><b>Bonificação</b></td>
+          <td>Ações adicionais ao acionista</td>
+          <td>Preço ajusta (efeito diluitivo econômico)</td>
+          <td>Confundir com dividendos em dinheiro</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>Oferta Primária x Secundária (onde tu errou e a banca pega)</h3>
+    <table class="table">
+      <thead><tr><th></th><th>Oferta Primária</th><th>Oferta Secundária</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Quem recebe o dinheiro?</b></td>
+          <td><b>Empresa</b> (captação)</td>
+          <td><b>Acionista vendedor</b></td>
+        </tr>
+        <tr>
+          <td><b>Capital social</b></td>
+          <td>Aumenta (emissão)</td>
+          <td>Não muda (troca de mãos)</td>
+        </tr>
+        <tr>
+          <td><b>Diluição</b></td>
+          <td>Pode ocorrer (há novas ações)</td>
+          <td>Em regra, não (não emite novas)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:12px;">
+      <b>Regra de ouro:</b> Secundária = o dinheiro vai para <b>quem vende</b>, não para a empresa.
+    </div>
+
+  </section>
+
+  <!-- Governança -->
+  <section class="card" id="governanca-controlador-tag-along-opa-explicado-completo">
+    <h2>Governança + Controlador + Tag Along + OPA (explicado completo)</h2>
+
+    <h3>Quem é o “controlador” (como se reconhece)</h3>
+    <div class="grid">
+      <div class="card compact cols-6">
+        <div class="tag ok">Conceito</div>
+        <ul>
+          <li><b>Controlador</b> = quem <b>exerce</b> poder de controle: preponderância em deliberações + poder de eleger maioria de administradores.</li>
+          <li>Não é “título nomeado”: é <b>reconhecido por fatos</b> (voto/eleição/decisão).</li>
+          <li>Pode ser <b>1 acionista</b> ou <b>grupo</b> (via acordo de acionistas).</li>
+        </ul>
+      </div>
+      <div class="card compact cols-6">
+        <div class="tag warn">Pegadinhas</div>
+        <ul>
+          <li>“Maior participação relativa” <b>não garante</b> controle se outro grupo votar coordenado.</li>
+          <li>“Estatuto define controlador” → em geral <b>não</b>; estatuto define regras, controle decorre do exercício.</li>
+          <li>Novo investidor com % maior: só vira controlador se <b>passar a mandar</b> (eleger, dominar deliberações) ou desmontar o bloco controlador.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>O que é Tag Along (e por que existe)</h3>
+    <div class="grid">
+      <div class="card compact cols-7">
+        <ul>
+          <li><b>Tag along</b> = direito do minoritário vender suas ações <b>ao adquirente do controle</b> quando há <b>alienação de controle</b>.</li>
+          <li>Serve para compartilhar o <b>prêmio de controle</b> (preço acima do mercado pago pelo poder de decisão).</li>
+          <li>No <b>Novo Mercado</b>: regra cobrada = <b>100%</b> (condições do controlador se estendem ao minoritário).</li>
+        </ul>
+      </div>
+      <div class="card compact cols-5">
+        <div class="tag warn">Gatilho</div>
+        <div class="code">Evento = ALIENAÇÃO DE CONTROLE
+Se não há venda do controle, não é tag along automático.</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>OPA (Oferta Pública de Aquisição) — como funciona na prática</h3>
+    <div class="flow">
+      <div class="node"><strong>1) Venda do controle</strong><span>Comprador paga prêmio</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>2) Divulgação</strong><span>Fato relevante / comunicação</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>3) OPA</strong><span>Comprador oferta a minoritários</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>4) Leilão (B3)</strong><span>Aceita quem quer vender</span></div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>Quem fiscaliza “quando dispara” tag along/OPA?</h3>
+    <table class="table">
+      <thead><tr><th>Agente</th><th>O que faz</th><th>Ponto de prova</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>CVM</b></td>
+          <td>Regula e fiscaliza mercado de valores mobiliários; supervisiona eventos relevantes e cumprimento de regras de proteção ao investidor.</td>
+          <td>“Quem fiscaliza?” → <b>CVM</b></td>
+        </tr>
+        <tr>
+          <td><b>B3</b></td>
+          <td>Ambiente de negociação/listagem; acompanha regras do segmento; operacionaliza leilões (inclui OPA).</td>
+          <td>B3 é infraestrutura/autorregra, mas <b>CVM é fiscalizador estatal</b></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+  <!-- RF -->
+  <section class="card" id="42-renda-fixa-conceitos-que-derrubam">
+    <h2>4.2 Renda Fixa — conceitos que derrubam</h2>
+
+    <h3>Indexadores e formas de remuneração</h3>
+    <table class="table">
+      <thead><tr><th>Tipo</th><th>Remuneração</th><th>Risco principal</th><th>Pegadinha</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Prefixado</b></td>
+          <td>Taxa fixa</td>
+          <td>Risco de taxa de juros (marcação a mercado)</td>
+          <td>Juros ↑ → preço ↓</td>
+        </tr>
+        <tr>
+          <td><b>Pós-fixado</b></td>
+          <td>Indexador (ex: DI/Selic)</td>
+          <td>Risco de indexador + crédito</td>
+          <td>Confundir DI x Selic</td>
+        </tr>
+        <tr>
+          <td><b>Inflação + taxa real</b></td>
+          <td>IPCA + juro real</td>
+          <td>Juros reais + duration</td>
+          <td>“Protege” inflação, mas preço oscila</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>Títulos públicos (nomes e características)</h3>
+    <table class="table">
+      <thead><tr><th>Título</th><th>Como rende</th><th>Cupons?</th><th>Nome “Tesouro Direto”</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>LFT</b></td><td>Selic</td><td>Não (em geral)</td><td>Tesouro Selic</td>
+        </tr>
+        <tr>
+          <td><b>LTN</b></td><td>Prefixado</td><td>Não</td><td>Tesouro Prefixado</td>
+        </tr>
+        <tr>
+          <td><b>NTN-F</b></td><td>Prefixado</td><td>Sim (juros semestrais)</td><td>Tesouro Prefixado c/ juros</td>
+        </tr>
+        <tr>
+          <td><b>NTN-B</b></td><td>IPCA + taxa real</td><td><b>Sim</b> (juros semestrais)</td><td>Tesouro IPCA+ c/ juros</td>
+        </tr>
+        <tr>
+          <td><b>NTN-B Principal</b></td><td>IPCA + taxa real</td><td><b>Não</b></td><td>Tesouro IPCA+</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>FGC (limites e o que NÃO cobre)</h3>
+    <div class="grid">
+      <div class="card compact cols-6">
+        <div class="tag ok">Limites (memorizar)</div>
+        <ul>
+          <li><b>R$ 250 mil</b> por CPF/CNPJ <b>por instituição</b>.</li>
+          <li><b>Limite global</b>: até <b>R$ 1 milhão</b> por CPF/CNPJ em janela de tempo (regra cobrada em prova).</li>
+        </ul>
+      </div>
+      <div class="card compact cols-6">
+        <div class="tag bad">Não cobre</div>
+        <ul>
+          <li>Ações, debêntures, COE, fundos, criptoativos</li>
+          <li>Títulos públicos (não precisam de FGC)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Derivativos -->
+  <section class="card" id="43-derivativos-o-que-a-banca-cobra-sem-formulas">
+    <h2>4.3 Derivativos — o que a banca cobra (sem fórmulas)</h2>
+
+    <h3>Ideia central</h3>
+    <ul>
+      <li>Derivativo = contrato cujo valor deriva de um ativo/índice/taxa.</li>
+      <li>Usos: <b>hedge</b> (proteção), <b>alavancagem</b>, <b>posicionamento</b>.</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <h3>Opções (call/put) — riscos e direitos (decorar)</h3>
+    <table class="table">
+      <thead><tr><th>Parte</th><th>Call (compra)</th><th>Put (venda)</th><th>Risco</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Comprador (titular)</b></td>
+          <td>Direito de comprar</td>
+          <td>Direito de vender</td>
+          <td><b>Limitado</b> ao prêmio</td>
+        </tr>
+        <tr>
+          <td><b>Vendedor (lançador)</b></td>
+          <td>Obrigação de vender</td>
+          <td>Obrigação de comprar</td>
+          <td>Pode ser <b>muito elevado</b> (especialmente em call descoberta)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>O que mexe no prêmio? (pegadinha recorrente)</h3>
+    <ul>
+      <li><b>Volatilidade ↑</b> → prêmio ↑ (opção vale mais quando o subjacente oscila mais)</li>
+      <li><b>Tempo ↑</b> até vencimento → prêmio ↑ (mais chance de ficar “dentro do dinheiro”)</li>
+      <li><b>Juros ↑</b> → tende a elevar prêmio de <b>call</b> (cobrança clássica)</li>
+      <li><b>Strike ↑</b> → call fica menos provável → prêmio tende a ↓</li>
+    </ul>
+  </section>
+
+  <!-- COE + Cripto -->
+  <section class="card" id="44-coe-criptodefi-o-que-realmente-cai">
+    <h2>4.4 COE + Cripto/DeFi (o que realmente cai)</h2>
+
+    <h3>COE — dois tipos</h3>
+    <table class="table">
+      <thead><tr><th>Tipo</th><th>O que promete</th><th>O que NÃO promete</th><th>Armadilha</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Valor nominal protegido</b></td>
+          <td>Protege o capital nominal <b>no vencimento</b></td>
+          <td>Não garante rentabilidade; não garante liquidez</td>
+          <td>“Protegido” ≠ “rentabilidade mínima”</td>
+        </tr>
+        <tr>
+          <td><b>Valor nominal em risco</b></td>
+          <td>Pode ter payoff agressivo</td>
+          <td>Sem proteção do principal</td>
+          <td>Confundir com fundo/garantia</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hr"></div>
+
+    <h3>Cripto/DeFi — leitura de prova</h3>
+    <ul>
+      <li>Criptoativo <b>pode ou não</b> ser valor mobiliário <b>dependendo da estrutura</b> (como é ofertado, promessa, direitos).</li>
+      <li>DeFi: smart contracts, tokenização, novas estruturas; riscos (volatilidade, custódia, regulação, contraparte tecnológica).</li>
+      <li>Carteiras: <b>hot wallet</b> (online) vs <b>cold wallet</b> (offline).</li>
+    </ul>
+  </section>
+
+  <section class="card" id="checklist-final-bloco-4">
+    <h2>Checklist final (Bloco 4)</h2>
+    <div class="kv">
+      <div class="item"><div class="label">Decorar</div><div class="value">Oferta primária x secundária; Novo Mercado = só ON; Tag along/OPA; FGC limites; NTN-B vs NTN-B Principal</div></div>
+      <div class="item"><div class="label">Entender</div><div class="value">Marcação a mercado; prêmio de controle; prêmio de opções</div></div>
+      <div class="item"><div class="label">Pegadinhas</div><div class="value">“FGC cobre tudo” (não); “secundária dilui” (não); “COE protegido = renda mínima” (não)</div></div>
+      <div class="item"><div class="label">Pronto pra simulado?</div><div class="value">Simulado hard só de Bloco 4 depois dessa leitura.</div></div>
+    </div>
+    <div class="footer">Se tu quiser, eu gero a próxima página (Bloco 5) com o mesmo padrão visual.</div>
+  </section>
+
+
+  <section class="card quiz" id="quiz">
+    <h2>Quiz rápido — Produtos (RV/RF/Derivativos/COE/Cripto)</h2>
+    <p style="opacity:.85;margin-top:-6px">Fecha a página com pontos: faz o quiz e mede se tu tá pronto pro simulado.</p>
+    
+      <div class="q" data-q="q1" data-correct="b">
+        <div class="q-title">1. No mercado de ações, o que é tag along?</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q1" value="a"> <span>Direito de preferência em subscrição</span></label>
+<label><input type="radio" name="q1" value="b"> <span>Extensão do prêmio de controle ao minoritário</span></label>
+<label><input type="radio" name="q1" value="c"> <span>Garantia do FGC</span></label>
+<label><input type="radio" name="q1" value="d"> <span>Recompra obrigatória pelo emissor</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q2" data-correct="b">
+        <div class="q-title">2. Em renda fixa, “juros acruados” representam:</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q2" value="a"> <span>Juros futuros não contratados</span></label>
+<label><input type="radio" name="q2" value="b"> <span>Juros já incorridos desde o último pagamento</span></label>
+<label><input type="radio" name="q2" value="c"> <span>Juros pagos antecipadamente no ato da compra</span></label>
+<label><input type="radio" name="q2" value="d"> <span>Taxa real descontada da inflação</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q3" data-correct="b">
+        <div class="q-title">3. Uma opção de compra (call) dá ao titular o direito de:</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q3" value="a"> <span>Vender o ativo-objeto a um preço de exercício</span></label>
+<label><input type="radio" name="q3" value="b"> <span>Comprar o ativo-objeto a um preço de exercício</span></label>
+<label><input type="radio" name="q3" value="c"> <span>Trocar indexador (swap) sem custo</span></label>
+<label><input type="radio" name="q3" value="d"> <span>Receber cupom semestral</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q4" data-correct="c">
+        <div class="q-title">4. No COE com valor nominal protegido, qual afirmação é correta?</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q4" value="a"> <span>Sempre existe garantia do FGC</span></label>
+<label><input type="radio" name="q4" value="b"> <span>O investidor pode perder parte do principal</span></label>
+<label><input type="radio" name="q4" value="c"> <span>O principal é protegido no vencimento, mas pode haver risco de liquidez e de emissor</span></label>
+<label><input type="radio" name="q4" value="d"> <span>É isento de IR</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q5" data-correct="b">
+        <div class="q-title">5. Em derivativos, “hedge” significa:</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q5" value="a"> <span>Aumentar alavancagem para buscar retorno</span></label>
+<label><input type="radio" name="q5" value="b"> <span>Proteger uma posição contra variações adversas</span></label>
+<label><input type="radio" name="q5" value="c"> <span>Comprar ativos sem risco</span></label>
+<label><input type="radio" name="q5" value="d"> <span>Operar só no mercado à vista</span></label>
+        </div>
+      </div>
+      <div class="q" data-q="q6" data-correct="c">
+        <div class="q-title">6. Hot wallet e cold wallet se diferenciam principalmente por:</div>
+        <div class="q-opts">
+          <label><input type="radio" name="q6" value="a"> <span>Moeda fiduciária vs cripto</span></label>
+<label><input type="radio" name="q6" value="b"> <span>Custódia em bolsa vs Tesouro Direto</span></label>
+<label><input type="radio" name="q6" value="c"> <span>Conexão à internet (online) vs armazenamento offline</span></label>
+<label><input type="radio" name="q6" value="d"> <span>Imposto de renda retido vs não retido</span></label>
+        </div>
+      </div>
+    <div class="actions">
+      <button type="button" data-quiz-submit>Corrigir</button>
+      <button type="button" data-quiz-reset>Limpar</button>
+    </div>
+    <div class="result" data-quiz-result style="display:none"></div>
+  </section>
+
+</main>
+
+<script src="./js/cpa20-ui.js" defer></script>
+
+</body>
+</html>
